@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Introduction to Python Turtle Graphics. </title>
+  <link href='./style3.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+  </script>
+  <script id="python_script" type="text/python">
+    import sys
+    import traceback
+    from browser import document, timer, prompt
+    from turtle import restart
+
+
+    def run_code(ev):
+        restart()
+        timer.set_timeout(exec_code, 1)
+    
+    document["run"].bind("click", run_code)
+    
+    def exec_code():
+        _code = document["source"].text
+        print(_code)
+        #_code = "\n".join([line.strip() for line in _code.split("\n")])
+        try:
+            exec(_code)
+        except:
+            try:
+                traceback.print_exc()
+            except:
+                print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+  <header>
+    <div id="mySidenav" class="sidenav">
+      <ol type="I">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+        <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+        <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+        <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+        <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a>
+        </li>
+        <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a>
+        </li>
+        <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+        <li><a href="./review.html">Review section.</a></li>
+        <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+      </ol>
+    </div>
+    <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+    <div id="trial">
+      <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>
+      <h1>Python Turtle Graphics</h1>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+          v</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ol>
+            <!--add more links-->
+            <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+            <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+            <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+            <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for
+                  loop.</span></a></li>
+            <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                  style="color:red;">while loop.</span></a></li>
+            <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                conditional statement.</a></li>
+            <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+            <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+            <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+          </ol>
+        </div>
+      </div>
+      <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+    </div>
+  </header>
+
+  <article>
+
+    <h1 style="text-align:center;" id="setting">1. Introduction to Python Turtle Graphics.</h1>
+    <h3 style="color: rgb(249, 148, 85);">Structure</h3>
+    <ol  >
+        <li><b>Chapter name.</li>
+        <li>Numbers of tasks.</li>
+        <li>Must watch video.</li>
+        <li>Reminder.</li>
+        <li>Tasks instructions.</li>
+        <li>Do tasks.</li>
+        <li>Complete.</li>
+        </b>
+    </ol>
+    <h4 style="color: rgb(249, 148, 85);">SO WHAT IS A TURTLE ? </h4>
+    <ul>
+        <li>Pre-install Python library.</li>
+        <li>Enable users to create pictures and shapes.</li>
+        <li>It is an onscreen pen that is used for drawing.</li>
+        <li>Usually shaped like a turtle. Hence its name come from that.</li>
+        <li>Mainly used to introduce newbies to the world of computer.</li>
+        <li>Use commands to control the turtle.</li>
+    </ul>
+    <h4 style="color: rgb(249, 148, 85);">WHY LEARN TURTLE ?</h4>
+    <ul>
+        <li>Effective way to teach codding for beginners.</li>
+        <li>Entertaining.</li>
+        <li>Help programmers get a feel for programming with Python.</li>
+        <li>Easy to explore on your own.</li>
+        <li>Allow creativity.</li>
+    </ul>
+    <iframe width="600" height="444" src="https://www.youtube.com/embed/rQqwdbIUTEI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p style="color: red; text-align:center;"><i>There is a simple turtle program below, you can run this to have a general idea about turtle.</p></i>
+    <br><br>
+    <div id="console" style="color: rgb(64, 152, 152)"><strong> NOW PLEASE RUN THE PROGRAM !</strong></div>
+  <div class="interactive-part">
+    <button id="run" class = "interactive-button">Run</button>
+    <div class="brython">
+      <pre id="source" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+name.speed(10)
+for i in range(25):
+    name.circle(5*i)
+    name.circle(-5*i)
+    name.left(i)
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+    </pre>
+      <div id="turtle-div">
+      </div>
+      <br>
+    </div>
+    <div class="progress-div">
+      <button id="complete" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+      <input type="password" id = "pass-complete" style= "visibility:hidden;">
+      <br>
+      <button id ="btn-pass-complete" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+    </div>
+  </div>
+  <progress id = "bar" max= 100 value=0></progress>
+<a href="./index2.html" class="previous prev-next">&laquo; Previous</a>
+<a href="./settingturtle.html" class="next prev-next">Next &raquo;</a>
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html>

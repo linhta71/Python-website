@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Let's get familiar with turtle </title>
+  <link href='./style3.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+  </script>
+  <script id="python_script" type="text/python">
+      import sys
+      import traceback
+      from browser import document, timer
+      from turtle import restart
+  
+      def run_code(ev):
+          restart()
+          timer.set_timeout(exec_code, 1)
+      
+      document["run"].bind("click", run_code)
+      
+      def exec_code():
+          _code = document["source"].text
+          #_code = "\n".join([line.strip() for line in _code.split("\n")])
+          try:
+              exec(_code)
+          except:
+              try:
+                  traceback.print_exc()
+              except:
+                  print("could not print traceback")
+      
+      
+      ###############Second interactive#####
+      
+      def run_code1(ev):
+          restart()
+          timer.set_timeout(exec_code1, 1)
+
+      document["run1"].bind("click", run_code1)
+      def exec_code1():
+          _code = document["source1"].text
+          #_code = "\n".join([line.strip() for line in _code.split("\n")])
+          try:
+              exec(_code)
+          except:
+              try:
+                  traceback.print_exc()
+              except:
+                  print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+  <header>
+    <div id="mySidenav" class="sidenav">
+      <ol type="I">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+        <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+        <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+        <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+        <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a>
+        </li>
+        <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a>
+        </li>
+        <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+        <li><a href="./review.html">Review section.</a></li>
+        <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+      </ol>
+    </div>
+    <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+    <div id="trial">
+      <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>
+      <h1>Python Turtle Graphics</h1>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+          v</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ol>
+            <!--add more links-->
+            <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+            <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+            <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+            <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for
+                  loop.</span></a></li>
+            <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                  style="color:red;">while loop.</span></a></li>
+            <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                conditional statement.</a></li>
+            <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+            <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+            <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+          </ol>
+        </div>
+      </div>
+      <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+    </div>
+  </header>
+
+
+  <article>
+    <h1 style="text-align:center;" id="setting">3. Let's get familiar with turtle</h1>
+    <p id="intro" style="color: rgb(240, 0, 0)"><em>This level aims to help to children to get familiar with python.
+        This level will contain 2 parts: warm up and draw a square.</p></em>
+    <img style="width: 30%" id="center" src='./defauldirection.png' alt="Turtle default direction">
+    <p>Here is the video to better demonstrate how turtle work</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kj9urX8XD0M" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+    <br>
+    <p style ="color:coral"><i>In the previous chapter, you have been familiar with setting the turtle up.</p></i>
+    <table style="width:100%">
+      <tr>
+        <th style="color: rgb(62, 119, 119)">Purpose</th>
+        <th style="color: rgb(62, 119, 119)">Command</th>
+      </tr>
+      <tr>
+        <td>Import Python turtle graphic.</td>
+        <td>import turtle</td>
+      </tr>
+      <tr>
+        <td>Create a name for your turtle.</td>
+        <td>name = turtle.Turtle()</td>
+      </tr>
+      <tr>
+        <td>Choosing a shape.
+          <br>
+          <em style="color: rgb(243, 93, 93); font-size: 14px;">if you skip the command choosing a shape for your turtle
+            then your turtle shape will automatically be an arrow.</em>
+        </td>
+        <td>name.shape(‘shape’)
+          <br>
+          <em style="color: rgb(243, 93, 93); font-size: 14px">You have to replace ‘shape’ by one of these shapes:
+            arrow, circle, square, triangle or turtle. </em>
+        </td>
+      </tr>
+      <tr>
+        <td>Choosing a color
+          <br>
+          <em style="color: rgb(243, 93, 93); font-size: 14px;">if you skip the command choosing a color for your turtle
+            then your turtle color will automatically be black.</em>
+        </td>
+        <td>name.color(‘color’)
+          <br>
+          <em style="color: rgb(243, 93, 93); font-size: 14px">You have to replace ‘color’ by the color that you wish
+            to. </em>
+        </td>
+      </tr>
+      <tr>
+        <td>Setting a default location to (0,0)</td>
+        <td>name.goto(0,0)</td>
+      </tr>
+    </table>
+    <h3>Part 1: Warm up!! Draw a line by using your own turtle.</h3>
+    <ol type="1">
+      <li>Firstly, you need to set up your turtle just like what you did in the setting up part. Including:</li>
+      <ol type="a">
+        <li>Set up your turtle name.</li>
+      </ol>
+      <br>
+      <li>In order to draw a line, please choose a direction for the line:</li>
+      <br>
+      <ol type="a">
+        <li>If you want your turtle to draw a line from its default position, please follow the step below:</li>
+        <ol typr="a">
+          <li>Since you don’t want the turtle to turn and you just want to draw a line from its default position, so you
+            just need to write out a command to make the turtle goes forward: name.forward(“steps”).</li>
+          <ol type="i">
+            <li>For example, if your turtle name is “car” and you would like your turtle to go forward for 100 steps
+              then your command must be: car.forward(100)</li>
+          </ol>
+        </ol>
+        <br>
+        <li>If you want to draw a slant line, then you can turn your turtle to either the right or the left and then you
+          can draw your own line. You can follow the steps below:</li>
+        <br>
+        <ol type="a">
+          <li>Ways to turn your turtle:</li>
+          <ol type="i">
+            <li>In order to turn your turtle to the right, you must write in the command: name.right(degrees).</li>
+            <ol type="1">
+              <li>For example, if your turtle name is “car” and you want to turn your turtle to the right for 90 degrees
+                then your command must be: car.right(90).</li>
+            </ol>
+            <li>In order to turn your turtle to the left, you must write in the command: name.left(degrees).</li>
+            <ol type="1">
+              <li>1. For example, if your turtle name is “car” and you want to turn your turtle to the left for 90
+                degrees then your command must be: car.left(90).</li>
+            </ol>
+          </ol>
+          <br>
+          <li>After turning your turtle to a specific direction, you can now write your command to make the turtle go
+            forward by a number of steps by using the command to draw a line: name.forward(steps).</li>
+          <br>
+          <em style="color:rgb(243, 93, 93); font-size: 14px">Notice that steps and degrees can either be decimal or
+            integer.</em>
+        </ol>
+      </ol>
+    </ol>
+    <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW PLEASE
+        DRAW THE LINE BY YOURSELF !</strong></div>
+    <div class="interactive-part">
+      <button id="run" class="interactive-button"
+        style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 10px 10px; ">Run</button>
+      <button type="button" class="interactive-button" onclick="openSolution()">Solution</button>
+      <div id="solution">
+        <div class="solution-code">
+          <strong># This solution will draw a vertical line with length of 100.</strong>
+          <br><br>
+          <br>sol = turtle.Turtle()
+          <br>sol.shape("turtle")
+          <br>sol.color("blue")
+          <br>sol.left(90)
+          <br>sol.forward(100)
+        </div>
+        <br><button type="button" class="interactive-button close-sol" onclick="closeSolution()">Close</button>
+      </div>
+
+      <div class="brython">
+        <pre id="source" contenteditable="true">
+
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+      </pre>
+        <div id="turtle-div">
+        </div>
+        <br>
+      </div>
+      <div class="progress-div">
+        <button id="complete" class="complete-btn"
+          style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+        <input type="password" id="pass-complete" style="visibility:hidden;">
+        <br>
+        <button id="btn-pass-complete" class="pass-btn" style="visibility: hidden;">Enter pass</button>
+      </div>
+    </div>
+    <h3>Part 2: Draw a square</h3>
+    <img style="width: 20%" id="center" src='./square_only.png' alt="Square drawn by Turtle">
+    <em style="color:rgb(243, 93, 93); font-size: 14px">The instruction below is the fastest way to draw a square. You
+      can implement the square by using your own way. </em>
+    <h3 style="color:rgb(62, 119, 119)">Notice</h3>
+    <ol type='o'>
+      <li>You will always have a turtle locates at the default direction since you have set it at position (0,0). In
+        order to help you to get familiar with Turtle programming, the square that you draw must be the same as the
+        square in the picture above. In other words, after finishing drawing a square, the turtle must face to the South
+        direction. </li>
+      <li>Each side of the square has been annotated with the corresponding letter A, B, C, D. The instrcution below
+        will guide children how to draw those lines in the easiest way. </li>
+      <img style="width: 40%" id="center" src='./sqaureabcd.png' alt="Square drawn by Turtle">
+
+      <li>The black arrow is the default location and direction of your turtle. The red turtle is the final direction
+        and location of your turtle. </li>
+    </ol>
+    <p style="color: rgb(85, 148, 148)"><em>Here are some syntax that important for this part. After finishing this
+        level, children should be comfortable with these most command:</em></p>
+    <table style="width:100%">
+      <tr>
+        <th style="color: rgb(62, 119, 119)">Purpose</th>
+        <th style="color: rgb(62, 119, 119)">Command</th>
+      </tr>
+      <tr>
+        <td>Make the turtle goes forward in the current direction.</td>
+        <td>turtle.forward(steps)</td>
+      </tr>
+      <tr>
+        <td>Turns the turtle to the left direction in number degrees.</td>
+        <td>turtle.left(degrees)</td>
+      </tr>
+      <tr>
+        <td>Turns the turtle to the right direction in number degrees.</td>
+        <td>turtle.right(degrees)</td>
+      </tr>
+      <tr>
+        <td>Pointing a variable to an object.</td>
+        <td>variable = object
+          <em style="color:rgb(243, 93, 93); font-size: 14px;">The object can be in any type: integer, decimal, list,
+            etc.</em>
+        </td>
+      </tr>
+    </table>
+    <h3> Here are the steps</h3>
+    <ol type="1">
+      <li>Firstly, you need to set up your turtle just like what you did in the setting up part. Including:</li>
+      <ol type="a">
+        <li>Set up your turtle name.</li>
+        <li>Choose a shape for your turtle. </li>
+        <li>Set up turtle defaul location to (0,0).</li>
+        <li>Set up turtle color to the color that you like.</li>
+        <li>Pick a lengh for all the egdes of your square by using the command: variable = object. </li>
+        <ol type="i">
+          <li>1. For example: if you want your square edges to have length 90, the your command could be: length= 90.
+            This command point the langth variable to 90, so whenever you access to the length, it will always equal to
+            90. </li>
+        </ol>
+      </ol>
+      <li>Draw line A:</li>
+      <ol type="a">
+        <li>From the position of the black the arrow, you can know that in order to draw line A, you just have to make
+          the turtle go forward. </li>
+        <li>The command that will make the turtle to go forward is given in the table, which is: turtle.forward(steps).
+          In the command line, ‘turtle’ must be replaced by your turtle name, the name you have set up for your turtle
+          in step 1. You must also replace the “steps” with an integer or a decimal, which is the length of your square
+          egdes that you have set up in step 1. There are 2 ways to write this command:</li>
+        <ol type="i">
+          <li>For example: if you have set up your length = 90, your turtle name is ‘car’ then your command should be:
+            car.forward(90). This is anormal to wirte this command.</li>
+          <li>For example: if you have set up your length = 90, your turtle name is ‘car’ then your command can be:
+            car.forward(length). In this way, you are accessing to the number 90 through the variable length, because
+            length variable points to the number 90.</li>
+        </ol>
+      </ol>
+      <li>Draw line B:</li>
+      <ol type="a">
+        <li>Turn your turtle to the <span style="color:rgb(243, 93, 93)"> left </span> in an angle of <span
+            style="color:rgb(243, 93, 93)">90 </span> degrees in order to create the first 90 degrees angle of the
+          square. The command that you will use to turn the turtle’s angle for 90 degrees to the left is provided above:
+          turtle.left(90). You will have to change ‘turtle’ in the command to your turtle name, which you have set up in
+          step 1.</li>
+        <ol type="i">
+          <li>For example, if your turtle name is ‘car’ and you want your turtle turn to the left for 30 degrees, then
+            your command should be: car.left(30).</li>
+        </ol>
+        <li>After turning your turtle to the left for 90 degrees, you will now write a command to make the turtle go
+          forward just like in step 2.</li>
+      </ol>
+      <li>Draw line C:</li>
+      <ol type="a">
+        <li>Turn your turtle to the left again for 90 degrees. Type in your command just like what you have for line B.
+        </li>
+        <li>After changing the turtle’s direction, please make the turtle go forward to draw out line C. You can simply
+          repeat the forward command in step 2 and 3.</li>
+      </ol>
+      <li>Draw line D:</li>
+      <ol type="a">
+        <li>Turn your turtle to the left again for 90 degrees. Type in your command just like what you have for line B
+          and C.</li>
+        <li>After changing the turtle’s direction, please make the turtle go forward to draw out line D. You can simply
+          repeat the forward command in step 2, 3 and 4.</li>
+      </ol>
+    </ol>
+    <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW PLEASE
+        DRAW THE SQUARE BY YOURSELF !</strong></div>
+    <div class="interactive-part">
+      <button id="run1" class="interactive-button"
+        style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 10px 10px; ">Run</button>
+      <button type="button" class="interactive-button" onclick="openSolution(1)">Solution</button>
+      <div id="solution1">
+        <div class="solution-code">
+          <span># This solution will draw a vertical line with length of 100.</span>
+          <br>sol = turtle.Turtle()
+          <br>sol.shape("turtle")
+          <br>sol.color("blue")
+          <br>sol.forward(100)
+          <br>sol.left(90)
+          <br>sol.forward(100)
+          <br>sol.left(90)
+          <br>sol.forward(100)
+          <br>sol.left(90)
+          <br>sol.forward(100)
+        </div>
+        <br>
+        <button type="button" class="interactive-button close-sol" onclick="closeSolution(1)">Close</button>
+      </div>
+      <div class="brython">
+        <pre id="source1" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div1'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+      </pre>
+        <div id="turtle-div1">
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="progress-div">
+      <button id="complete2" class="complete-btn"
+        style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+      <input type="password" id="pass-complete2" style="visibility:hidden;">
+      <br>
+      <button id="btn-pass-complete2" class="pass-btn" style="visibility: hidden;">Enter pass</button>
+    </div>
+    <a href="./settingturtle.html" class="previous prev-next">&laquo; Previous</a>
+    <progress id="bar" max=100 value=0></progress>
+    <a href="./forloop.html" class="next prev-next">Next &raquo;</a>
+  </article>
+  <div id="congratulation" onclick="off()">
+    <h2 id="congrats-text">Congratulations! you finish</h2>
+  </div>
+
+
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+
+</html>

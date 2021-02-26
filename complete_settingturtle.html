@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Setting up your turtle </title>
+  <link href='./style2.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+  </script>
+  <script id="python_script" type="text/python">
+    import sys
+    import traceback
+    from browser import document, timer, prompt
+    from turtle import restart
+
+
+    def run_code(ev):
+        restart()
+        timer.set_timeout(exec_code, 1)
+    
+    document["run"].bind("click", run_code)
+    
+    def exec_code():
+        _code = document["source"].text
+        #_code = "\n".join([line.strip() for line in _code.split("\n")])
+        try:
+            exec(_code)
+        except:
+            try:
+                traceback.print_exc()
+            except:
+                print("could not print traceback")
+    
+    """def complete(ev):
+        document["pass"].style.visibility = "visible"
+        document["pass-btn"].style.visibility = "visible"
+        document["pass-btn"].bind("click", check_pass)
+        document["pass"].text = ""
+        document["pass"].style.visibility = "hidden"
+        document["pass-btn"].style.visibility = "hidden"
+
+        
+    def check_pass(ev):
+        print(document["pass"].text)
+    
+    document["complete"].bind("click", complete)"""
+    </script>
+</head>
+
+<body onload="brython(1)">
+  <header>
+    <div id="mySidenav" class="sidenav">
+      <ol type="I">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+        <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+        <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+        <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a>
+        </li>
+        <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a>
+        </li>
+        <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+        <li><a href="#">Review section.</a></li>
+        <li><a href="#">Advanced knowlegde about turtle.</a></li>
+      </ol>
+    </div>
+    <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+    <div id="trial">
+      <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>
+      <h1>Python Turtle Graphics</h1>
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+          v</button>
+        <div id="myDropdown" class="dropdown-content">
+          <ol>
+            <!--add more links-->
+            <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+            <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+            <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for
+                  loop.</span></a></li>
+            <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                  style="color:red;">while loop.</span></a></li>
+            <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                conditional statement.</a></li>
+            <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+            <li><a href='#' style="color: rgb(90, 105, 121)">Review section.</a></li>
+            <li><a href='#' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+          </ol>
+        </div>
+      </div>
+      <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+    </div>
+  </header>
+
+  <article>
+
+    <h1 style="text-align:center;" id="setting">1. Setting up your turtle !</h1>
+    <h3>Introduction </h3>
+    <p>Turtle graphic is the most useful and popular way to introduce programming to kids and help them to engage to the
+      computer field at
+      first sight. This turtle module has been improved from the of the same module from the all the version of Python
+      up until 2.5</p>
+    <p>Each turtle must have 3 essential properties: a location, an orientation ( or direction), and a pen. A pen can be
+      designed in 3
+      features: color width and visible or invisible state.</p>
+    <h3>How does turtle work?</h3>
+    <p>A designed turtle will start from assigned position then main make a movement with each specific command, which
+      is easier for beginners
+      to understand and keep track the turtle. They can also predict what the turtle does by imagining themselves as the
+      turtle. </p>
+    <h3>Instruction for downloading python turtle graphic. </h3>
+    <p>Step 1: If you don’t have python programming language, either anaconda or miniconda, please download it in the
+      following website. Please
+      read carefully and choose the most suitable version for your devices: <a
+        href="https://www.anaconda.com/products/individual" style="color:rgb(0, 4, 253)">click here to download.</a></p>
+    <p>Step 2: : After downloading the suitable programming manager, please now download Python with the latest version,
+      which is <a href=https://www.python.org/downloads/ style="color:rgb(0, 4, 247)"> Download Python 3.8.5. </a></p>
+    <p>Step 3: Now you must install an editor such as visual studio code if you want to write your own code script. You
+      can download Visual Studio code through <a href=https://visualstudio.microsoft.com/downloads/
+        style="color:rgb(0, 4, 247)">this link.</a></p>
+    <p>Step 4: Now you can create a file and write your own code scrip. </p>
+
+    <h3>Now, let's set your turtle up !</h3>
+    <em style="color:rgb(85, 148, 148)">Please follow the steps below. </em>
+    <ol type="1">
+      <li>You need an import command to run the Python turtle graphic: import turtle. Please type in import turtle at
+        the beginnning of the program. Which had already been imported for you.</li>
+      <br>
+      <li>In order to set up a turtle, you must create a name for your turtle by using the command: name =
+        turtle.Turtle(). </li>
+      <ol type="a">
+        <li>For example, if you would like to call your turtle is “car” then your command should be: car =
+          turtle.Turtle().</li>
+      </ol>
+      <br>
+      <li>Python turtle graphic is just a name of the program and your “turtle” can have various shapes including arrow,
+        circle, square, triangle, classic and also turtle. In order to set up the shape of your turtle you must use the
+        command: name.shape(“the_shape_that you choose”).<br>
+        <em style="color: red;">If you skip the command choosing a shape for your turtle then your turtle shape will
+          automatically be an arrow.</em></li>
+      <br>
+
+      <li>If you would like your turtle to have another color that different from black, you must use this command:
+        name.color(“a_color_that_you_prefer”).
+        <ol type="a">
+          <li>For example, if your turtle name is “car” and you would like your turtle to have color of red then your
+            command should be: car.color(“red”).</li>
+        </ol>
+        <em style="color: red">If you skip the command choosing a color for your turtle then your turtle color will
+          automatically be black.</em></li>
+      <br>
+      <li>You should locate your turtle default position to (0,0) based on the x,y coordinated in algebra. In order to
+        do so, you must use the command: name.goto(0,0)</li>
+      <ol type="a">
+        <li>For example, if your turtle name is “car” and you must set your turtle to the default position, which is
+          (0,0), then your command must be: car.goto(0,0)</li>
+      </ol>
+    </ol>
+    <em style="color:rgb(85, 148, 148)">There has been a default turtle made for you. Please based on that and the
+      instruction above to design your own turtle. </em>
+    <br><br>
+  </article>
+  <div id="console" style="color: rgb(85, 148, 148)"><strong> NOW PLEASE TRY IT BY YOURSELF!</strong></div>
+  <div id="interactive-part">
+    <button id="run"
+      style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 10px 10px; ">Run</button>
+    <br>
+    <div id="brython">
+      <pre id="source" style="float: left; border:2px solid rgb(112, 112, 112); width:450px;height: 450px; border-radius: 20px;"
+        contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+    </pre>
+      <div id="turtle-div" style="float:left; border:2px solid rgb(112, 112, 112); width:450px;height: 450px; border-radius: 20px; ">
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+  <div class="progress-div">
+    <button id="complete" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+    <input type="password" id = "pass-complete" style= "visibility:hidden;">
+    <br>
+    <button id ="btn-pass-complete" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+  </div>
+  <a href="#" class="previous prev-next">&laquo; Previous</a>
+  
+  <progress id = "bar" max= 100 value=0></progress>
+  <div id="congratulation" onclick="off()">
+    <h2 id="congrats-text">Congratulations! you finish</h2>
+  </div>
+    
+    <a href="#" class="next prev-next">Next &raquo;</a>
+
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html>

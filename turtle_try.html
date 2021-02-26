@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+    import sys
+    import traceback
+    from browser import document, timer
+    from turtle import restart
+
+    def run_code(ev):
+        restart()
+        timer.set_timeout(exec_code, 1)
+    
+    document["run"].bind("click", run_code)
+    
+    def exec_code():
+        _code = document["source"].text
+        #_code = "\n".join([line.strip() for line in _code.split("\n")])
+        try:
+            exec(_code)
+        except:
+            try:
+                traceback.print_exc()
+            except:
+                print("could not print traceback")
+    
+    def run_code1(ev):
+        restart()
+        timer.set_timeout(exec_code1, 1)
+    
+    document["run1"].bind("click", run_code1)
+    
+    def exec_code1():
+        _code = document["source1"].text
+        #_code = "\n".join([line.strip() for line in _code.split("\n")])
+        try:
+            exec(_code)
+        except:
+            try:
+                traceback.print_exc()
+            except:
+                print("could not print traceback")            
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <pre id="source" style="float:left; border:1px solid blue; width:450px;height: 450px" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div']
+)
+#DO NOT DELETE ABOVE THIS LINE
+t = turtle.Turtle()
+
+t.width(5)
+
+for c in ['red', '#00ff00', '#fa0', 'rgb(0,0,200)']:
+    t.color(c)
+    t.forward(100)
+    t.left(90)
+
+# dot() and write() do not require the pen to be down
+t.penup()
+t.goto(-30, -100)
+t.dot(40, 'rgba(255, 0, 0, 0.5')
+t.goto(30, -100)
+t.dot(40, 'rgba(0, 255, 0, 0.5')
+t.goto(0, -70)
+t.dot(40, 'rgba(0, 0, 255, 0.5')
+
+t.goto(0, 125)
+t.color('purple')
+t.write("I love Brython!", font=("Arial", 20, "normal"))
+
+
+turtle.done()
+    </pre>
+    <div id="turtle-div" style="float:left;border:1px solid green; width:450px;height: 450px"> </div>
+    <button id="run">Run</button>
+    <br>
+
+    <pre id="source1" style="float:left; border:1px solid blue; width:450px;height: 450px" contenteditable="true">
+        from browser import document
+        import turtle
+        turtle.set_defaults(
+            turtle_canvas_wrapper = document['turtle-div1']
+        )
+        #DO NOT DELETE ABOVE THIS LINE
+        t = turtle.Turtle()
+        
+        t.width(5)
+        
+        for c in ['red', '#00ff00', '#fa0', 'rgb(0,0,200)']:
+            t.color(c)
+            t.forward(100)
+            t.left(90)
+        
+        # dot() and write() do not require the pen to be down
+        t.penup()
+        t.goto(-30, -100)
+        t.dot(40, 'rgba(255, 0, 0, 0.5')
+        t.goto(30, -100)
+        t.dot(40, 'rgba(0, 255, 0, 0.5')
+        t.goto(0, -70)
+        t.dot(40, 'rgba(0, 0, 255, 0.5')
+        
+        t.goto(0, 125)
+        t.color('purple')
+        t.write("I love Brython!", font=("Arial", 20, "normal"))
+        
+        
+        turtle.done()
+            </pre>
+            <div id="turtle-div1" style="float:left;border:1px solid green; width:450px;height: 450px"> </div>
+            <button id="run1">Run</button>
+</body>

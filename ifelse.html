@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. If-esle conditional statement</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+        import sys
+        import traceback
+        from browser import document, timer, html
+        from turtle import restart
+    
+        def run_code(ev):
+            document["turtle-div"].text = ""
+            restart()
+            timer.set_timeout(exec_code, 1)
+        
+        document["run"].bind("click", run_code)
+        
+        def exec_code():
+            _code = document["source"].text
+            print(_code)
+            code = '''if weight > 50:
+    print("Your suitcase is heavier than 50 lbs")
+else:
+    print("Your suitcase is perfect!")'''
+            print(code)
+            print(code==_code)
+            if code == _code:
+                document["turtle-div"] <= html.H1("You are correct !")
+            else:
+                document["turtle-div"] <= html.H1("Please try again !")
+
+            
+        
+        
+        ###############Second interactive#####
+        
+        def run_code1(ev):
+            restart()
+            timer.set_timeout(exec_code1, 1)
+
+        document["run1"].bind("click", run_code1)
+        def exec_code1():
+            _code = document["source1"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <header>
+        <div id="mySidenav" class="sidenav">
+            <ol type="I">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+                <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+                <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+                <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a>
+                </li>
+                <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while
+                            loop.</span></a></li>
+                <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a></li>
+                <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+                <li><a href="./review.html">Review section.</a></li>
+                <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+            </ol>
+        </div>
+        <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+        <div id="trial">
+            <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png'
+                    alt='Image drawn with Turtle.'></a>
+            <h1>Python Turtle Graphics</h1>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+                    v</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <ol>
+                        <!--add more links-->
+                        <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+                        <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a>
+                        </li>
+                        <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with
+                                turtle.</a></li>
+                        <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span
+                                    style="color:red;">for loop.</span></a></li>
+                        <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                                    style="color:red;">while loop.</span></a></li>
+                        <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                                conditional statement.</a></li>
+                        <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+                        <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+                        <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+                    </ol>
+                </div>
+            </div>
+            <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+        </div>
+    </header>
+    <article>
+        <h1 style="text-align:center;" id="setting">6. if-else conditional statement.</h1>
+        <p style="color: rgb(255, 0, 0)"><i>This level 5 will have 2 parts: </p>
+        <ol type="A">
+            <li style="color: rgb(255, 0, 0)">Part 1: : You will learn about ‘if-else’ statement/condition in this first part. There will be a simple task in this part.   </li>
+            <li style="color: rgb(255, 0, 0)">Part 2: In this part you will have further practice for the for loop and while loop.</li>
+        </ol></i>
+        <p>Let's take a look at how to use condition in the video</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DZwmZ8Usvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><strong><span style = "color:rgb(244, 162, 91); font-size: 20px">Reminder:</span></strong>: Through the first 3 level of the turtle program, students should have learnt the turtle’s default direction, some common commands to change direction of the turtle, the "for loop" and the "while loop". Here are what you have learnt so far:</p>
+        <table style="width:80%">
+            <tr>
+                <th style="color: rgb(62, 119, 119)">Purpose</th>
+                <th style="color: rgb(62, 119, 119)">Command</th>
+            </tr>
+            <tr>
+                <td>Import Python turtle graphic.</td>
+                <td>import turtle</td>
+            </tr>
+            <tr>
+                <td>Create a name for your turtle.</td>
+                <td>name = turtle.Turtle()</td>
+            </tr>
+            <tr>
+                <td>Choosing a shape.
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                        shape for your turtle then your turtle shape will automatically be an arrow.</em>
+                </td>
+                <td>name.shape(‘shape’)
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘shape’ by one of
+                        these shapes: arrow, circle, square, triangle or turtle. </em>
+                </td>
+            </tr>
+            <tr>
+                <td>Choosing a color
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                        color for your turtle then your turtle color will automatically be black.</em>
+                </td>
+                <td>name.color(‘color’)
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘color’ by the
+                        color that you wish to. </em>
+                </td>
+            </tr>
+            <tr>
+                <td>Setting a default location to (0,0)</td>
+                <td>name.goto(0,0)</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Setting a
+                        background</strong>
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px; text-align: center;">If you don’t
+                        want to have background image for your turtle, please skip this part.</em>
+                </td>
+            </tr>
+            <tr>
+                <td>Call the screen function.</td>
+                <td>screen=turtle.Screen().</td>
+            </tr>
+            <tr>
+                <td>Set background to the picture that you like.</td>
+                <td>screen.bgpic(“picture_file”)
+                    <br>
+                    <em style="color: rgb(240, 130, 130); font-size: 14px">Click to the image icon and look at 3
+                        images that it contains. Replace ‘picture_file’ with the image file that you like.</em>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Movement
+                        commands</strong></td>
+            </tr>
+            <tr>
+                <td>Make the turtle go forward in the current direction.</td>
+                <td>turtle.forward(steps)</td>
+            </tr>
+            <tr>
+                <td>Turns the turtle to the left direction in number degrees.</td>
+                <td>turtle.left(degrees)</td>
+            </tr>
+            <tr>
+                <td>Turns the turtle to the right direction in number degrees.</td>
+                <td>turtle.right(degrees)</td>
+            </tr>
+            <tr>
+                <td>Pointing a variable to an object.</td>
+                <td>variable = object
+                    <br>
+                    <em style="color:rgb(240, 130, 130); font-size: 14px;">The object can be in any type:
+                        integer, decimal, list, etc.</em>
+                </td>
+            </tr>
+            <tr>
+                <td>Setting turtle pen to a color</td>
+                <td>turtle. pencolor('color')
+                    <br>
+                    <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace ‘color’ by a color that you
+                        want. </em>
+                </td>
+            </tr>
+            <tr>
+                <td><span style = "color:rgb(6, 135, 255)">The general while loop is: </span><br> n = a<br>while n < c: <br> &nbsp;&nbsp;&nbsp;&nbsp;code
+                        chunk <br> &nbsp;&nbsp;&nbsp;&nbsp;n = n + b</td>
+                <td><span style = "color:rgb(6, 135, 255)">The general for loop is: </span><br> for i inrange(n): <br> &nbsp;&nbsp;&nbsp;&nbsp; code chunk
+                </td>
+            </tr>
+        </table>
+        <ol type="1">
+            <li><h3 style="color:rgb(62, 119, 119)">Part 1: “if-else” statement and exercise about ‘if-else’ statement. </h3></li>
+            <table>
+                <td>
+                    General "if-else" statement:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; if (condition): <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "1" intended statement block <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; else:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "2" intended statement block <br>
+                </td>
+            </table>
+            <br>
+            <ul>
+                <li>If the condition is true, then do the 1st indented statements. If the condition is not true, then it will be ‘else’ and the 2nd indented block will be processed. </li>
+                <li>There are several types of comparison:</li>
+                <br>
+                <table>
+                    <tr>
+                        <th style="color: rgb(62, 119, 119)">Meaning</th>
+                        <th style="color: rgb(62, 119, 119)">Math Comparison Notations</th>  
+                        <th style="color: rgb(62, 119, 119)">Python Comparison Notations</th>    
+                    </tr>
+                    <tr>
+                        <td>Less than</td>
+                        <td><</td>
+                        <td><</td>
+                    </tr>
+                    <tr>
+                        <td>Greater than</td>
+                        <td>></td>
+                        <td>></td>
+                    </tr>
+                    <tr>
+                        <td>Less than or equal</td>
+                        <td>≤</td>
+                        <td>=</td>
+                    </tr>
+                    <tr>
+                        <td>Greater than or equal</td>
+                        <td>≥</td>
+                        <td>>=</td>
+                    </tr>
+                    <tr>
+                        <td>Equals</td>
+                        <td>=</td>
+                        <td>==</td>
+                    </tr>
+                    <tr>
+                        <td>Not equal</td>
+                        <td>≠</td>
+                        <td>!=</td>
+                    </tr>
+                </table>
+                <br>
+                <li>There should not be <span style="color: crimson;"><u><i>any</i></u></span> space between the two-symbol Python substitutes.</li>
+                <li>Notice that the obvious choice for equals, a single equal sign, is not used to check for equality. An annoying second equal sign is required. This is because the single equal sign is already used for assignment of an object to a variable in Python, so it is not available for tests. </li>
+                <p style="color:rgb(0, 110, 255)">Example: Each student has familiar with the grading scale. If their grades are higher or equal to 90, then they will get an A, if their grades are higher or equal to 80 and lower than 90, then they will get a B, etc. They can always read back the grading scale on their school website or ask their advisor/counselor anytime. Here is the ‘if-else’ statement for the example</p>
+                <br>
+                <table>
+                    <tr>
+                        <th style="color: rgb(62, 119, 119)">Example if-else condition.</th>
+                        <th style="color: rgb(62, 119, 119)">Example situation and output.</th>  
+                    </tr>
+                    <tr>
+                        <td>
+                            if grade >= 90:
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("Your current grade is: "+str(grade))
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("A")
+                            <br>
+                            if grade >= 80 and grade < 90:
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("Your current grade is: "+str(grade))
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("B")
+                            <br>
+                            else: <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("Please check back all the grade levels.")
+                        </td>
+                        <td>
+                            Example situation: if your current grade is 95 then find the letter grade<br>
+                            Your current grade is: 95 <br>
+                            A
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p style = "color:rgb(248, 97, 97)"><strong>Exercise task: When travelling on a plane, you can only carry maximum of 2 suitcases and the maximum weight of each suitcase is 50lbs. Therefore, 2 suitcases will correspond to a maximum of 100lbs. Any suitcases that is heavier than 50lbs will not be allowed to carry on the plane. Please make a condition ‘if-else’ statement for this situation. If the suitcase weight is higher than 50 lbs, please print 'Your suitcase is heavier than 50 lbs’. Otherwise, please print 'Your suitcase is perfect!'. You will complete this task by filling in the blanks, the ‘if-else’ statement will be given below and there are 4 blanks in it: </strong></p>
+                <p style = "color:rgb(245, 141, 49)"><em>The check button will check the correctness of your answers.</em></p>
+                <!-- brython  -->
+                <!-- interactive begin -->
+        <div class="interactive-part">
+            <button id="run" class = "interactive-button">Check</button>
+            <button type="button" class = "interactive-button" onclick="openSolution()">Solution</button>         
+            <div id="solution">
+                # This is the solution of the task
+                
+                <br>if weight > 50:
+                <br>&emsp;print("Your suitcase is heavier than 50 lbs")
+                <br>else:
+                <br>&emsp;print("Your suitcase is perfect!")
+                <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution()">Close</button>
+            </div>
+
+            <br>
+            <div class="brython">
+                <pre id="source"contenteditable="true">
+
+if weight > ...:
+    ...
+else:
+    print("...")</pre>
+                <div id="turtle-div">
+                </div>
+                <br>
+            </div>
+        </div>
+        <!-- interactive end -->
+        <div class="progress-div">
+            <button id="complete" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+            <input type="password" id = "pass-complete" style= "visibility:hidden;">
+            <br>
+            <button id ="btn-pass-complete" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+          </div>
+        </div>
+                
+                <br>
+                <li><span style ="color:rgb(62, 119, 119)"><em>INSTRUCTION:</em></span></li>
+                <br>
+                <ul>
+                    <li>Step 1: Fill in the first blank. </li>
+                    <ul><li>Hints: Each suitcase must not weigh more than 50 lbs. You should fill in the blank an integer, which represent the condition.  </li></ul>
+                    <li>Step 2: Fill in the second blank: </li>
+                    <ul><li>Hints: This is a printing statement. This one should print out the message when the condition is satisfied (when the weight is over 50). You should fill in the blank only the message when the condition is not satisfied, which is 'Your suitcase is heavier than 50 lbs’. </li></ul>
+                    <li>Step 3: Fill in the third blank: </li>
+                    <ul><li>Hints: an ‘if -else’ statement has 2 parts: ‘if’ and ‘else’. You have already had the ‘if’ part, now, you just have to fill in the other part, which is ‘else’. Please just type in the word ‘else’. </li></ul>
+                    <li>Step 4: Fill in the fourth blank: </li>
+                    <ul><li>Hints: this is a printing command which prints out the message 'Your suitcase is perfect!'  </li></ul>
+                </ul>
+            </ul>
+            <li style="color:rgb(62, 119, 119)"><h3>Part 2:</li></h3>
+            <img src="bus.png" alt="This is a bus." id="center" style = "width: 50%">
+            <ul>
+                <li style = "color:rgb(62, 119, 119)">In this section you will again practice your skill in using either a 'while loop' or a 'for loop'. You will practice these techniques through drawing a bus. During the program, you will learn 2 more techniques that is making the turtle go backward and drawing a semicircle/circle. Here are what you will have to perform: </li>
+                <ul>
+                    <li>2 for loops: Draw the rectangle, draw the windows (the squares).</li>
+                    <table>
+                        <tr>
+                            <td>2 new techniques:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Going backward: turtle.backward(steps)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Drawing semi circle: turtle.circle(radius, 180)
+                            </td>
+                        </tr>
+                    </table>
+                </ul>
+                <li style = "color:rgb(62, 119, 119)">Instructions: </li>
+                <ol type="1">
+                    <li>Set up the default position, name your turtle, set up a background (if you want to) for your turtle. </li>
+                    <li>Pen up your turtle.</li>
+                    <li>Backward your turtle for 150 by using the provided syntax.</li>
+                    <li>Pen down your turtle.</li>
+                    <li>Set pensize to 5.</li>
+                    <li>Pick a length for all of your edges by using the similar syntax when you did for the square in the previous chapter. Notice that all the edges in the following shapes: the triangle, the square and the pentagon are the same, so you just have to pick a length (should be larger 50) for all of them. The width of the rectangle will be calculated later based on this length. </li>
+                    <li>Write the first for loop to draw the red rectangle (the body of the bus).</li>
+                    <ol type ="a">
+                        <li>Before writing the for loop:</li>
+                        <ol type="i">
+                            <li>Set up your turtle pen color to red.</li>
+                        </ol>
+                        <li>Now you can write the for loop: </li>
+                        <ol type ="i">
+                            <li>Hints: 'i' in the general 'for loop' is the total number of edges that are equal to each other in the shape. For example, you have learnt how to draw the square by using a 'for loop', in a square, you have 4 equal edges, therefore, your 'i' is equal to 4 and the 'for loop' is 'for n in range(4):'. Now look at the rectangle There are 2 pairs of edges that are equal to each other (2 widths and 2 heights), therefore, the total number of edged that are equal in each group is 2, so 'i' here must equal to 2 and in order to write out this for loop, please use THE SAME FORMAT OF THE GENERAL FOR LOOP AND REPLACE 'i' BY 2.</li>
+                            <li>The code chunk will contain 4 lines of code, each line will do a different mission:</li>
+                            <ol type="A">
+                                <li>Draw the width of the rectangle by writing the command that makes the turtle go forward by the length you have chosen multiplies by 3.</li>
+                                <li>Turn your turtle to the right for 90 degrees.</li>
+                                <li>Draw the height of the rectangle by writing the command that makes the turtle go forward by the length you have chosen.</li>
+                                <li>Turn your turtle to the right for 90 degrees. </li>
+                            </ol>
+                        </ol>
+                    </ol>
+                    <li>Draw the yellow rectangle (the light of the bus). You don’t need a for loop for this part, please follow the steps below:</li>
+                    <ol type = "a">
+                        <li>Set up your turtle pen color to yellow.</li>
+                        <li>Make your turtle go backward by the chosen length /2.</li>
+                        <li>Make your turtle turn right for 90 degrees.</li>
+                        <li>Make your turtle go forward by the chosen length.</li>
+                        <li>Make your turtle turns left for 90 degrees.</li>
+                        <li>Make your turtle go forward by the chosen length /2.</li>
+                    </ol>
+                    <li>Now draw the 2 black tires. </li>
+                    <ol type = 'a'>
+                        <li>Calculate the radius first, radius = chosen length / pi. <span style="color: crimson;">The Python math library has a built-in value of pi, math.pi, so you do not need to remember it.</span>You can assign it like this: radius = your chosen length // math.pi</li>
+                        <li>Make your turtle go forward by the radius.</li> 
+                        <li>Make your turtle turn right for 90 degrees.</li>
+                        <li>Set up your turtle pen color to black.</li>
+                        <li>Draw the first tire by using the provided function.</li>
+                        <li>fMake your turtle turn right for 90 degrees.</li>
+                        <li>Set up your turtle pen color to red.</li>
+                        <li>Make your turtle go forward by 3*((chosen length) – 6*(radius)).</li>
+                        <li>Make your turtle turn right for 90 degrees.</li>
+                        <li>Set up your turtle pen color to black.</li>
+                        <li>Draw the second tire by using the provided function.</li>
+                        <li>Make your turtle turn right for 90 degrees.</li>
+                    </ol>
+                    <li>Draw the windows:</li>
+                    <ol type = "a">
+                        <li>Before drawing out the windows, you will have to move your turtle to a suitable position. You can follow the steps below:</li>
+                        <ol type ="i">
+                            <li>Set up your turtle pen color to red.</li>
+                            <li>Make your turtle go backward by the (chosen length)*3-radius.</li>
+                            <li>Make your turtle turn left for 90 degrees.</li>
+                            <li>Make your turtle go forward by the chosen length // 4, this fraction means only take the integer part.</li>
+                            <li>Make your turtle turn right for 90 degrees.</li>
+                        </ol>
+                        <li>Now is the nested for loop to draw all the windows:</li>
+                        <ol type = "i">
+                            <li>There are 6 windows in the bus, so the code that draw 1 square window must be run for 6 times. </li>
+                            <li>The code that draw 6 windows have been made for you, you will need to fill in the banks and change ‘turtle’ into the name you have set up for your turtle.</li>
+                            <li>Here is the code:
+                                <br>
+                                <br>
+                                <div id = "givencode">
+                                    for i in range(...):
+                                    <br>&emsp;my_turtle.penup()
+                                    <br>&emsp;my_turtle.forward(fw+width)
+                                    <br>&emsp;my_turtle.pendown()
+                                    <br>&emsp;for k in range(...):
+                                    <br>&emsp;&emsp;my_turtle.left(90)
+                                    <br>&emsp;&emsp;my_turtle.forward(x)
+                                    <br>
+                                </div>
+                            </li>
+                        </ol>
+                    </ol>
+                </ol>
+            </ul>
+            <br>
+            <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW PLEASE DRAW YOUR BUS !</strong></div>
+            
+            <!-- brython -->
+            <!-- interactive begin -->
+        <div class="interactive-part">
+            <button id="run1" class = "interactive-button">Run</button>
+            <button type="button" class = "interactive-button" onclick="openSolution(1)">Solution</button>         
+            <div id="solution1" >
+                # This solution will draw out a bus that is the same as the provided picture with length is 90, which is x. 
+                <br>
+                <br>pi = 3.14
+                <br>x = 90
+                <br>width = 3*x
+                <br>r = x//pi
+                <br>fw = x/10
+                <br>width = x/3
+                <br>
+                <br>my_turtle = turtle.Turtle()
+                <br>my_turtle.penup()
+                <br>my_turtle.goto(-100,0)
+                <br>my_turtle.pendown()
+                <br>my_turtle.pensize(5)
+                <br>my_turtle.shape('turtle')
+                <br># draw the body
+                <br>my_turtle.color('red')  
+                <br>for i in range(2):
+                <br>&emsp;my_turtle.forward(x*3)
+                <br>&emsp;my_turtle.right(90)
+                <br>&emsp;my_turtle.forward(x)
+                <br>&emsp;my_turtle.right(90)
+                <br># Draw the light
+                <br>my_turtle.color('yellow')
+                <br>my_turtle.backward(x/2)
+                <br>my_turtle.right(90)
+                <br>my_turtle.forward(x)
+                <br>my_turtle.left(90)
+                <br>my_turtle.forward(x/2)
+
+                <br> Draw the black 2 tires
+                <br>my_turtle.forward(r)
+                <br>my_turtle.right(90)
+                <br>my_turtle.color('black')
+                <br>my_turtle.circle(r, 180)
+                <br>my_turtle.right(90)
+                <br>my_turtle.color("red")
+                <br>my_turtle.forward(3*x - 6*r)
+                <br>my_turtle.right(90)
+                <br>my_turtle.color('black')
+                <br>my_turtle.circle(r, 180)
+                <br>my_turtle.right(90)
+
+                <br> draw windows
+                <br>my_turtle.color("red")
+                <br>my_turtle.backward(3*x-r)
+                <br>my_turtle.left(90)
+                <br>my_turtle.forward(x//4)
+                <br>my_turtle.right(90)
+                <br>my_turtle.color("blue")
+                <br>for i in range(6):
+                <br>&emsp;my_turtle.penup()
+                <br>&emsp;my_turtle.forward(fw+width)
+                <br>&emsp;my_turtle.pendown()
+                <br>&emsp;for i in range(4):
+                <br>&emsp;&emsp;my_turtle.left(90)
+                <br>&emsp;&emsp;my_turtle.forward(x)
+                <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution(1)">Close</button>
+            </div>
+            <br>
+            <div class="brython">
+                <pre id="source1"contenteditable="true">
+
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div1'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+
+            </pre>
+                <div id="turtle-div1">
+                </div>
+                <br>
+            </div>
+        </div>
+        <!-- interactive end -->
+        <div class="progress-div">
+            <button id="complete2" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+            <input type="password" id = "pass-complete2" style= "visibility:hidden;">
+            <br>
+            <button id ="btn-pass-complete2" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+          </div>
+        </div>
+        <br>
+        <a href="./whileloop.html" class="previous prev-next">&laquo; Previous</a>
+        <progress id = "bar" max= 100 value=0></progress>
+        <a href="./instances.html" class="next prev-next">Next &raquo;</a>
+        </ol>
+    </article>
+    <div id="congratulation" onclick="off()">
+        <h2 id="congrats-text">Congratulations! you finish</h2>
+      </div>
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html>

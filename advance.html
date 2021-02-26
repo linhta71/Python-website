@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. Advanced knowlegde about turtle.</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+      import sys
+      import traceback
+      from browser import document, timer
+      from turtle import restart
+        
+      """
+      def run_code(ev):
+          restart()
+          timer.set_timeout(exec_code, 1)
+      
+      document["run"].bind("click", run_code)
+      
+      def exec_code():
+          _code = document["source"].text
+          #_code = "\n".join([line.strip() for line in _code.split("\n")])
+          try:
+              exec(_code)
+          except:
+              try:
+                  traceback.print_exc()
+              except:
+                  print("could not print traceback")
+     """
+      
+      ###############Second interactive#####
+      
+      def run_code1(ev):
+          restart()
+          timer.set_timeout(exec_code1, 1)
+
+      document["run1"].bind("click", run_code1)
+      def exec_code1():
+          _code = document["source1"].text
+          #_code = "\n".join([line.strip() for line in _code.split("\n")])
+          try:
+              exec(_code)
+          except:
+              try:
+                  traceback.print_exc()
+              except:
+                  print("could not print traceback")
+    </script>
+  </head>
+  
+  <body onload="brython(1)">
+    <header>
+      <div id="mySidenav" class="sidenav">
+        <ol type="I">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+          <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+          <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+          <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+          <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a>
+          </li>
+          <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a>
+          </li>
+          <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+          <li><a href="./review.html">Review section.</a></li>
+          <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+        </ol>
+      </div>
+      <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+  
+      <div id="trial">
+        <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>
+        <h1>Python Turtle Graphics</h1>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+            v</button>
+          <div id="myDropdown" class="dropdown-content">
+            <ol>
+              <!--add more links-->
+              <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+              <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+              <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+              <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for
+                    loop.</span></a></li>
+              <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                    style="color:red;">while loop.</span></a></li>
+              <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                  conditional statement.</a></li>
+              <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+              <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+              <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+            </ol>
+          </div>
+        </div>
+        <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+      </div>
+    </header>
+
+
+  <article>
+    <h1 style="text-align:center;" id="setting">9. Advanced knowlegde about turtle.</h1>
+    <p style="color:rgb(245, 124, 79);text-align:center;"><b>You will have to complete 1 task in this chapter.</p></b>
+    <p><span style="color:rgb(249, 25, 0)"><i>This chapter will give you more functions about turtle and their usages. There will be a small task along with this chapter.</span></i>
+    <br>
+    </p>
+    <p>This video contains some advance funtions of turtle</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pIr8blj4I4E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p><span style = "color: rgb(240, 148, 114);">These are the functions, structures and their usages that you have been provided.</span></p>
+
+    <table style="width:80%">
+        <tr>
+            <th style="color: rgb(62, 119, 119)">Purpose</th>
+            <th style="color: rgb(62, 119, 119)">Command</th>
+        </tr>
+        <tr>
+            <td>Import Python turtle graphic.</td>
+            <td>import turtle</td>
+        </tr>
+        <tr>
+            <td>Create a name for your turtle.</td>
+            <td>name = turtle.Turtle()</td>
+        </tr>
+        <tr>
+            <td>Choosing a shape.
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                    shape for your turtle then your turtle shape will automatically be an arrow.</em>
+            </td>
+            <td>name.shape(‘shape’)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘shape’ by one of
+                    these shapes: arrow, circle, square, triangle or turtle. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Choosing a color
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                    color for your turtle then your turtle color will automatically be black.</em>
+            </td>
+            <td>name.color(‘color’)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘color’ by the
+                    color that you wish to. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Setting a default location to (0,0)</td>
+            <td>name.goto(0,0)</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Setting a
+                    background</strong>
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px; text-align: center;">If you don’t
+                    want to have background image for your turtle, please skip this part.</em>
+            </td>
+        </tr>
+        <tr>
+            <td>Call the screen function.</td>
+            <td>screen=turtle.Screen().</td>
+        </tr>
+        <tr>
+            <td>Set background to the picture that you like.</td>
+            <td>screen.bgpic(“picture_file”)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">Click to the image icon and look at 3
+                    images that it contains. Replace ‘picture_file’ with the image file that you like.</em>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Movement
+                    commands</strong></td>
+        </tr>
+        <tr>
+            <td>Make the turtle goes forward in the current direction.</td>
+            <td>turtle.forward(steps)</td>
+        </tr>
+        <tr>
+            <td>Turns the turtle to the left direction in number degrees.</td>
+            <td>turtle.left(degrees)</td>
+        </tr>
+        <tr>
+            <td>Turns the turtle to the right direction in number degrees.</td>
+            <td>turtle.right(degrees)</td>
+        </tr>
+        <tr>
+            <td>Pointing a variable to an object.</td>
+            <td>variable = object
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">The object can be in any type:
+                    integer, decimal, list, etc.</em>
+            </td>
+        </tr>
+        <tr>
+            <td>Setting turtle pen to a color</td>
+            <td>turtle. pencolor('color')
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace ‘color’ by a color that you
+                    want. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Make the turtle goes backward in the current direction</td>
+            <td>turtle.backward(steps)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace “steps” by an integer.  </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Draw a semi circle </td>
+            <td>turtle.circle(radius, 180)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace radius by either a decimal or an integer. 180 is fixed for SEMI-CIRCLE only. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Draw a circle </td>
+            <td>turtle.circle(radius)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace radius by either a decimal or an integer.</em>
+            </td>
+        </tr>
+        <tr>
+            <td><span style = "color:rgb(6, 135, 255)">The general while loop is: </span><br> n = a<br>while n < c: <br> &nbsp;&nbsp;&nbsp;&nbsp;code
+                    chunk <br> &nbsp;&nbsp;&nbsp;&nbsp;n = n + b</td>
+            <td><span style = "color:rgb(6, 135, 255)">The general for loop is: </span><br> for i inrange(i): <br> &nbsp;&nbsp;&nbsp;&nbsp; code chunk
+            </td>
+        </tr>
+    </table>
+
+    <h3 style="color: rgb(88, 146, 146);">Below are some useful and common functions of turtle graphics</h3>
+    <table>
+        <tr>
+            <td>Draw a circular dot with diameter <b>size</b>, using <b>color</b></td>
+            <td>turtle.dot(size=None, *color)<br>
+                <span style="color:rgb(240, 130, 130);">Replace size by either an integer or a float. No need to set up a color if you don’t want to.</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Set the turtle’s speed to an integer value in the range 0 to 10</td>
+            <td>
+                Turtle.speed(speed = None)
+                <ul style = "color:rgb(240, 130, 130);">
+                    <li>“fastest”: 0</li>
+                    <li>”fast”: 10</li>
+                    <li>”normal”: 6</li>
+                    <li>“slow”: 3</li>
+                    <li>“slowest”: 1</li>
+                    Please replace “speed” by an integer from 1 to 10
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Set the orientation of the turtle to <b>to_angle</b></td>
+            <td>
+                turtle.setheading(to_angle)
+                <table>
+                    <tr>
+                        <td><b>standard mdoe</b></td>
+                        <td><b>logo mode</b></td>
+                    </tr>
+                    <tr>
+                        <td>0 - east</td>
+                        <td>0 - north</td>
+                    <tr>
+                        <td>90 - north</td>
+                        <td>90 - east</td>
+                    </tr>
+                    <tr>
+                        <td>180 - west</td>
+                        <td>180 - south</td>
+                    </tr>
+                    <tr>
+                        <td>270 - south</td>
+                        <td>270 - west</td>
+                    </tr>
+                </table>
+            <br><span style = "color:rgb(240, 130, 130);">Replace “to_ange” to one of the integer in the table above based on your need</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Set the line thickness to width</td>
+            <td>turtle.pensize(width=None)<br>
+                <span style = "color:rgb(240, 130, 130);">width – a positive number</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Fill color inside a shape</td>
+            <td>turtle.fillcolor(*args)<br>
+                <span style = "color:rgb(240, 130, 130);">Replace “*args” by the color that you want. For instance, if you want to fill in a circle with “red”, and your turtle name is “bob”, the correct command is bob.fillcolor(“red”).</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Hide your turtle away</td>
+            <td>turtle.hideturtle()<br>
+                <span style = "color:rgb(240, 130, 130);">You will just have to type the exact command like above to hide your turtle</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Make your turtle appears again</td>
+            <td>Turtle.showturtle()<br>
+                <span style = "color:rgb(240, 130, 130);">You will just have to type the exact command like above to make your turtle appears</span>
+            </td>
+        </tr>
+        <tr>
+            <td>set pencolor and fillcolor</td>
+            <td>turtle.color(*args)<br>
+                <span style = "color:rgb(240, 130, 130);">Replace your “*args” with a color.</span>
+            </td>
+        </tr>
+    </table>
+    
+    <h3 style="color:rgb(88, 146, 146); font-size: 25px">Task: Draw a flower like the image below</h3>
+    
+    <img id="center" src="flower.png" alt="snake drawn by a turtle">
+    <h3 style="color:rgb(240, 130, 130); font-size: 25px">Instruction</h3>
+    <ul>
+        <li>
+            Step 1:
+            <ul>
+                <li>Set up your turtle name and color</li>
+                <li>Set up the turtle speed based on the command that has been provided in the table above.</li>
+            </ul>
+        </li>
+        <li>
+            Step 2:
+            <ul>
+                <li>Set up the pencolor and fillcolor based on the provided command in the table above. This color will be the color of your flower’s petals.</li>
+                <li>The flower in the picture above has red petals. </li>
+            </ul>
+        </li>
+        <li>
+            Step 3: Write a for loop to draw the petals
+            <ul>
+                <li>
+                    “i” in the for loop is the number of petals that you want your flower to have.
+                    <br><span style = "color:rgb(240, 148, 114)">Recommend that i should be around 5 to 8</span>
+                </li>
+                <li>
+                    There 4 lines of code in the code chunk:
+                    <ul>
+                        <li>Move your turtle forward by 500/(number of petals)</li>
+                        <li>Draw a circular dot with size of 500/(number of petals)</li>
+                        <li>Move your turtle backward by 500/(number of petals)</li>
+                        <li>Turn your turtle to the right for 360/(number of petals)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Step 4: draw the center of the circle
+            <ul>
+                <li>Set up the pencolor and fillcolor based on the provided command in the table above. This color will be the color of your flower’s center.
+                <ul>
+                    <li>Draw a circular dot with size of 500/(number of petals-1)</li>
+                </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW PLEASE COMPLETE THE TASK !</strong></div>
+    <div class="interactive-part">
+        <button id="run1" class = "interactive-button">Run</button>
+        <button type="button" class = "interactive-button" onclick="openSolution()">Solution</button>         
+        <div id="solution">
+            # This solution will draw out a flower that look exactly like the provided image.
+            <br>
+            <br>petals = 6
+            <br>my_turtle = turtle.Turtle()
+            <br>my_turtle.shape("turtle")
+            <br>my_turtle.speed(1)
+            <br>my_turtle.penup()
+            <br>my_turtle.color("red")
+            <br>for i in range(petals):
+            <br>&emsp;my_turtle.forward(500/(petals))
+            <br>&emsp;my_turtle.dot(500/(petals))
+            <br>&emsp;my_turtle.backward(500/(petals))
+            <br>&emsp;my_turtle.right(360/petals)
+            <br>my_turtle.color("black")
+            <br>my_turtle.dot(500/(petals-1))
+            <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution()">Close</button>
+        </div>
+  
+        <br>
+        <div class="brython">
+          <pre id="source1" contenteditable="true">
+  from browser import document
+  import turtle
+  turtle.set_defaults(
+      turtle_canvas_wrapper = document['turtle-div1'])
+  
+  # DO NOT DELETE ABOVE THIS LINE
+  ######## Write your code below
+  
+  name = turtle.Turtle()
+  name.shape("turtle")
+  name.color("red")
+  
+  # DO NOT DELETE BELOW THIS LINE
+  turtle.done() 
+        </pre>
+          <div id="turtle-div1">
+          </div>
+          <br>
+        </div>
+      </div>
+  
+    <div class="progress-div">
+        <button id="complete2" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+        <input type="password" id = "pass-complete2" style= "visibility:hidden;">
+        <br>
+        <button id ="btn-pass-complete2" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+      </div>
+    </div>
+    <br>
+    <a href="./review.html" class="previous prev-next">&laquo; Previous</a>
+    <progress id = "bar" max= 100 value=0></progress>
+  </article>
+  <div id="congratulation" onclick="off()">
+    <h2 id="congrats-text">Congratulations! you finish</h2>
+  </div>
+
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html> 

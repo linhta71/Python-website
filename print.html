@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+<script id="python_script" type="text/python">
+    import sys
+    import traceback
+    from browser import document, timer, html
+    from turtle import restart
+
+    def run_code(ev):
+        document["output"].text = ""
+        restart()
+        timer.set_timeout(exec_code, 1)
+    
+    document["run"].bind("click", run_code)
+    def print(arg):
+        document["output"] <= html.P(arg)
+
+    
+    def exec_code():
+        _code= document["source"].text
+        try:
+            exec(_code)
+        except:
+            try:
+                traceback.print_exc()
+            except:
+                print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <pre id="source" style="float:left; border:1px solid blue; width:450px;height: 450px" contenteditable="true">
+
+    </pre>
+    <!-- <div id="turtle-div" style="float:left;border:1px solid green; width:450px;height: 450px"> </div> -->
+    <button id="run">Run</button>
+    <br>
+    <div id="output"></div>
+</body>

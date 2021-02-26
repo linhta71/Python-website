@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Now is the for loop.</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+        import sys
+        import traceback
+        from browser import document, timer
+        from turtle import restart
+    
+        def run_code(ev):
+            restart()
+            timer.set_timeout(exec_code, 1)
+        
+        document["run"].bind("click", run_code)
+        
+        def exec_code():
+            _code = document["source"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+        
+        
+        ###############Second interactive#####
+        
+        def run_code1(ev):
+            restart()
+            timer.set_timeout(exec_code1, 1)
+
+        document["run1"].bind("click", run_code1)
+        def exec_code1():
+            _code = document["source1"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <header>
+        <div id="mySidenav" class="sidenav">
+            <ol type="I">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+                <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+                <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+                <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a>
+                </li>
+                <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while
+                            loop.</span></a></li>
+                <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional
+                        statement.</a></li>
+                <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+                <li><a href="./review.html">Review section.</a></li>
+                <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+            </ol>
+        </div>
+        <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+        <div id="trial">
+            <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png'
+                    alt='Image drawn with Turtle.'></a>
+            <h1>Python Turtle Graphics</h1>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+                    v</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <ol>
+                        <!--add more links-->
+                        <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+                        <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+                        <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+                        <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for loop.</span></a></li>
+                        <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span style="color:red;">while loop.</span></a></li>
+                        <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span> conditional statement.</a></li>
+                        <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+                        <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+                        <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+                    </ol>
+                </div>
+            </div>
+            <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+        </div>
+    </header>
+    <article>
+        <h1 style="text-align:center;" id="setting">4. Now is the for loop</h1>
+        <p style="color: rgb(255, 0, 0)"><i>In this level, you will learn how to write a for loop. There are 2 parts in
+            this level: </p>
+        <ol type="1">
+            <li style="color: rgb(255, 0, 0)">Getting familiar to “for loop” by writing a program to draw a pentagon </li>
+            <li style="color: rgb(255, 0, 0)"> Advanced practice with “for loop” by using for loop and write another program to draw a house.</li>
+        </ol></i>
+        <p>Before reading thhe introduction, let's look at the lecture</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ksvwEpbLxUA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <p><span style="color:rgb(243, 163, 87)"><strong>Reminder:</span></strong> Through the first level of the turtle
+            program, children should have acknowledged the turtle’s default direction and some common commands. Here are
+            those commands:</p>
+        <table style="width:100%">
+            <tr>
+                <th style="color: rgb(62, 119, 119)">Purpose</th>
+                <th style="color: rgb(62, 119, 119)">Command</th>
+            </tr>
+            <tr>
+                <td>Import Python turtle graphic.</td>
+                <td>import turtle</td>
+            </tr>
+            <tr>
+                <td>Create a name for your turtle.</td>
+                <td>name = turtle.Turtle()</td>
+            </tr>
+            <tr>
+                <td>Choosing a shape.
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px;">if you skip the command choosing a shape for
+                        your turtle then your turtle shape will automatically be an arrow.</em>
+                </td>
+                <td>name.shape(‘shape’)
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px">You have to replace ‘shape’ by one of these
+                        shapes: arrow, circle, square, triangle or turtle. </em>
+                </td>
+            </tr>
+            <tr>
+                <td>Choosing a color
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px;">if you skip the command choosing a color for
+                        your turtle then your turtle color will automatically be black.</em>
+                </td>
+                <td>name.color(‘color’)
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px">You have to replace ‘color’ by the color that
+                        you wish to. </em>
+                </td>
+            </tr>
+            <tr>
+                <td>Setting a default location to (0,0)</td>
+                <td>name.goto(0,0)</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Setting a
+                        background</strong>
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px; text-align: center;">If you don’t want to have
+                        background image for your turtle, please skip this part.</em>
+                </td>
+            </tr>
+            <tr>
+                <td>Call the screen function.</td>
+                <td>screen=turtle.Screen().</td>
+            </tr>
+            <tr>
+                <td>Set background to the picture that you like.</td>
+                <td>screen.bgpic(“picture_file”)
+                    <br>
+                    <em style="color: rgb(243, 93, 93); font-size: 14px">Click to the image icon and look at 3 images
+                        that it contains. Replace ‘picture_file’ with the image file that you like.</em>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Movement commands</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>Make the turtle goes forward in the current direction.</td>
+                <td>turtle.forward(steps)</td>
+            </tr>
+            <tr>
+                <td>Turns the turtle to the left direction in number degrees.</td>
+                <td>turtle.left(degrees)</td>
+            </tr>
+            <tr>
+                <td>Turns the turtle to the right direction in number degrees.</td>
+                <td>turtle.right(degrees)</td>
+            </tr>
+            <tr>
+                <td>Pointing a variable to an object.</td>
+                <td>variable = object
+                    <br>
+                    <em style="color:rgb(243, 93, 93); font-size: 14px;">The object can be in any type: integer,
+                        decimal, list, etc.</em>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h3><strong style="color:rgb(60, 141, 141); font-size: 20px;">Let’s get started with drawing the square from
+                level 1:</strong></h3>
+        <p>Look back the code of the previous chapter, in order to draw the simplest square your code should be:</p>
+        <table style="width: 100%;">
+            <tr>
+                <th style="color: rgb(62, 119, 119)">Code</th>
+                <th style="color: rgb(62, 119, 119)">Interpret</th>
+            </tr>
+            <tr>
+                <td>name.forward(length)
+                    <br>
+                    name.left(90)
+                    <br>
+                    name.forward(length)
+                    <br>
+                    name.left(90)
+                    <br>
+                    name.forward(length)
+                    <br>
+                    name.left(90)
+                    <br>
+                    name.forward(length)
+                    <br>
+                    name.left(90)
+                </td>
+                <td> You can notice that we repeat the 2 lines of code
+                    <p style="text-align: center; color:rgb(84, 166, 243)">name.forward(length)</p>
+                    <p style="text-align: center; color:rgb(84, 166, 243)">name.left(90)</p>
+                    for 4 times. Therefore, in order to shorten our code, we can use a for loop to repeat our code.
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h3 style="color:rgb(241, 156, 76)">So how does for loop work?</h3>
+        <p>For loops are traditionally used when you have a block of code which you want to repeat a fixed number of
+            times. The Python for statement iterates over the members of a sequence in order, executing the block each
+            time. </t>
+        </p>
+        <p>The general command of a for loop: </p>
+        <table style="width: 30%">
+            <tr>
+                <td>
+                    <p style="text-align: left; padding-left: 25px;">for <spand style="color:rgb(243, 93, 93)"><em>var
+                        </spand></em> in range(<span style="color:rgb(243, 93, 93)"><em>n</em></span>):</p>
+                    <p style="text-align: right;;">
+                        <t>...chunk of commands...</t>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p>Explanation for <strong>for loop</strong>:</p>
+        <ol type="A">
+            <li>for <em style="color:rgb(243, 93, 93)">var</em> in range(<em style="color:rgb(243, 93, 93)">n</em>):
+                this line of code is used to command that everything that is indented and lie under it will be
+                replicated for n times. </li>
+            <ol type="i">
+                <li><em style="color:rgb(243, 93, 93)">var</em>:This is an iterator. This can be replaced by any letters
+                    or words. </li>
+                <ol type="a">For example: <em style="color:rgb(243, 93, 93)">var</em> can be replaced by a letter: a or
+                    b or c, etc, or by a word such as time, or character , etc. </ol>
+                <li><em style="color:rgb(243, 93, 93)">n</em>: number of times that the chunk of code should be
+                    replicated. This must be an integer. </li>
+            </ol>
+            <p><em style="color:rgb(243, 93, 93)"><strong>Notice:</strong></em> <em style="color:rgb(243, 93, 93)">
+                    var</em>var only takes value from 0 to n-1.</p>
+        </ol>
+        <p style="color:rgb(241, 156, 76)">For example: changing the general “for loop” above into a real “for loop”
+            that draws a square will be:</p>
+        <ol type="a">
+            <li>If you choose your <em style="color:rgb(243, 93, 93)">var</em> is <em
+                    style="color:rgb(243, 93, 93)">i</em>, then you need to replace <em
+                    style="color:rgb(243, 93, 93)">var</em> to <em style="color:rgb(243, 93, 93)">i</em>.</li>
+            <li>There are 4 equal edges in a square.</li>
+            <li>There are 4 angles in a square, each angle is 90 degrees. If you decide to draw the square from the
+                left, then you will turn your turtle to the left for 90 degrees.</li>
+            <li>From (b) and (c) you will know that you have to repeat the code that draws the edge and the angle of the
+                square for 4 times in order to create a square.</li>
+            <li>Then here is the “for loop” for drawing the square.</li>
+            <table style="width: 30%;">
+                <tr>
+                    <td>
+                        <p style="text-align: left; padding-left: 25px;">for <spand style="color:rgb(243, 93, 93)"><em>i
+                            </spand></em> in range(<span style="color:rgb(243, 93, 93)"><em>4</em></span>):</p>
+                        <p style="text-align: right;;">
+                            <t>name.forward(length) (draw edge)</t>
+                        </p>
+                        <p style="text-align: right;;">
+                            <t>name.left(90) (draw angle)</t>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </ol>
+        <p><em style="color:rgb(243, 93, 93)"><strong>Notice:</strong></em>Indentation is very important in a for loop
+            of a Python program. It helps indicate which chunk or line of code must be replicated and which line or
+            chunk of code should not be. <span style="color:rgb(243, 93, 93)"> Without precise indentation, code script
+                will not work. </span></p>
+        <h3><strong style="color:rgb(60, 141, 141); font-size: 20px;">Let’s get some <u><em>for loop</u></em>
+                practice</strong></h3>
+        <h2 style="color:rgb(241, 156, 76); padding-bottom: 15px;">Part 1: Draw a pentagon by using for loop.</h2>
+        <img style="width: 30%" id="center" src="pentagon.png" alt="A pentagon drawn by Turtle.">
+        <em style="color:rgb(243, 93, 93)"><strong>Notice:</strong></em>
+        <ol type="A">
+            <li>You will always have a turtle locates at the default direction since you have set it at position (0,0).
+            </li>
+            <li>The black arrow is the default location and direction of your turtle. The red turtle is the final
+                direction and location of your turtle. /li>
+        </ol>
+        <h3><strong style="color:rgb(60, 141, 141); font-size: 15px;">Instruction</strong></h3>
+        <ol type="1">
+            <li>Step1: Firstly, you need to set up your turtle just like what you did in the setting up part for the
+                first chapter. Including:</li>
+            <ol type="i">
+                <li>Set up your turtle name.</li>
+                <li>Choose a shape for your turtle. </li>
+                <li>Set up turtle defaul location to (0,0).</li>
+                <li>Set up turtle color to the color that you like.</li>
+                <li>Set up background if you wish to.</li>
+                <li>Pick a lengh for all the egdes of your pentagon by using the command: variable = object. </li>
+                <ol type="a">For example: if you want your pentagon edges to have length 90, then your command could be:
+                    length= 90. This command point the length variable to 90, so whenever you access to the length, it
+                    will always equal to 90. </ol>
+            </ol>
+            <li>Step 2: Write out your for loop:</li>
+            <ol type="a">
+                <li>As you can see in the given example of drawing a square, the first line in the for loop is ‘for i in
+                    range(4):’.’range(4)’ is because there are 4 egdes and 4-90 degrees angles in a square. </li>
+                <li>For the pentagon, you must notice that there are 5 egdes in the pentagon.</li>
+                <li>Each egde create with the co-egde an angle of 108 degrees and there are also 5 edges in a pentagon.
+                    Threfore, you will have to repeate the code to draw the egde and the angle for 5 times. </li>
+            </ol>
+            <li>Step 3: Draw the edge:</li>
+            <em style="color:rgb(243, 93, 93)">This command will be indented 1 tab (or 4 spaces) since it lies in the
+                for loop just like the ‘name.forward(length)’ in the provided sample.</em>
+            <ol type="a">
+                <li>As you have noticed about the default position, the black arrow, in order to draw a pentagon looks
+                    like picture 1, first just write a command that makes the turtle go forward by number of steps you
+                    have set up in step 1.</li>
+                <li>You can use either way that have been mentioned in chapter 2 to make the turtle go forward by number
+                    of steps.</li>
+            </ol>
+            <li>Step 4: Create the angle:</li>
+            <em style="color:rgb(243, 93, 93)">This command will be indented 1 tab (or 4 spaces) since it lies in the
+                for loop just like the ‘name.turn(90)’ in the provided sample.</em>
+            <ol type="a">
+                <li>More specific, in the angle part, you must be carefull. </li>
+                <ol type="i">
+                    <li>The black arrow is your original position, after drawing the horizontal egde, you are now at the
+                        blue dot and the turtle is facing to the right. Therefore, in order to make the first 108
+                        degrees angle, which is the angle 1, you must turn your turtle to the left for a number of
+                        degrees which is angle 2. </li>
+                    <ol>
+                        <li>Each angle of a pentagon is 108o, which is angle 1.</li>
+                        <li>angle 1 + angle 2 = 180 degrees ==> angle 2 = 180 – 108 = 72.</li>
+                    </ol>
+                </ol>
+            </ol>
+        </ol>
+        <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW
+                PLEASE DRAW THE PENTAGON BY YOURSELF !</strong></div>
+        <!-- interactive begin -->
+        <div class="interactive-part">
+            <button id="run" class = "interactive-button">Run</button>
+            <button type="button" class = "interactive-button" onclick="openSolution()">Solution</button>         
+            <div id="solution">
+                # This solution will draw out a pink pentagon
+                <br>sol = turtle.Turtle()
+                <br>sol.shape("turtle")
+                <br>sol.color("pink")
+                <br>length = 50
+                <br>for i in range(5):
+                <br>&emsp;sol.forward(50)
+                <br>&emsp;sol.left(72)
+                <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution()">Close</button>
+            </div>
+            <div class="brython">
+                <pre id="source" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+            </pre>
+                <div id="turtle-div">
+                </div>
+                <br>
+                </div>
+            </div>
+        </div>
+        <!-- interactive end -->
+        <div class="progress-div">
+            <button id="complete" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+            <input type="password" id = "pass-complete" style= "visibility:hidden;">
+            <br>
+            <button id ="btn-pass-complete" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+          </div>
+        <h2 style="color:rgb(241, 156, 76); padding-bottom: 15px"> Part 2: Now let’s draw a simple house by using for
+            loop.</h2>
+        <em style="color:rgb(243, 93, 93)"><strong>Notice:</strong></em>
+        <ol type="A">
+            <li>A house must have a body and a roof on top of the body. You don’t need to draw any additional elements
+                in the house. </li>
+            <li>Your turtle’s color will automatically be the house color. </li>
+            <li>The body of the house is a square. Use a for loop to draw the body.</li>
+            <li>The roof of the house will be an equilateral triangle. Use a for loop to draw the roof.</li>
+            <li>All the edges of the house are the same, which means, all edges of the square body and triangle rooftop
+                are the same. </li>
+            <li>There are 2 separate for loops in this program, one to draw the square and one to draw the triangle.
+            </li>
+        </ol>
+        <h3><strong style="color:rgb(60, 141, 141); font-size: 15px; ">Instruction</strong></h3>
+        <ol type="1">
+            <li>Step 1: Firstly, you need to set up your turtle just like what you did in the setting up part for the
+                first chapter. Including:</li>
+            <ol type="i">
+                <li>Set up your turtle name.</li>
+                <li>Choose a shape for your turtle. </li>
+                <li>Set up turtle defaul location to (0,0).</li>
+                <li>Set up turtle color to the color that you like.</li>
+                <li>Set up background if you wish to.</li>
+                <li>Pick a lengh for all the egdes of your house by using the command: variable = object. </li>
+                <ol type="a">For example: if you want all the edges of our house to have length 90, then your command
+                    could be: length= 90. This command point the length variable to 90, so whenever you access to the
+                    length, it will always equal to 90. </ol>
+            </ol>
+            <li>Step 2: Write out your for loop to draw a square:</li>
+            <ol type="i">
+                <li>This one has been provided as an example</li>
+                <li>After processing step 2, this is what you get: </li>
+                <img style="width: 27%" id="center" src="for_loop_square.png" alt="A pentagon drawn by Turtle.">
+            </ol>
+            <li>Step 3: Your turtle now is located at the left corner and facing to the right. Now, move your turtle to
+                the blue location and facing right. Here is some hints:</li>
+            <ol type="i">
+                <li>Turn your turtle to the left for 90 degees.</li>
+                <li>Move your turtle forward by the length of the edge that you have set up in step 1.</li>
+                <li>Turn your turtle to the right for 90 degees.</li>
+            </ol>
+            <li>Step 4: Now, your turtel is at the blue dot and facing to the right. Write the for loop to draw the
+                equilateral triangle roof.</li>
+            <ol type="i">
+                <li>There are 3-60 degrees angles in the triangle.</li>
+                <li>Therefore, you must repeat the code that draw the egde and the angle for 3 times.</li>
+                <li>You will have 2 commands in the chunk of code for this for loop, just like what you perform in the
+                    pentagon and the square:</li>
+                <ol type="a">
+                    <li style="color:rgb(243, 93, 93)"><em>The 2 commands below must be indented 1 tab (or 4 spaces)
+                            since they lie in the for loop just like the ‘name.forward(length)’ and ‘name.left(90)’ in
+                            the provided sample.</em></li>
+                    <li>The first command is to make the turtle go forward by the length that you have set up in step 1.
+                        You can use either ways that have been provided in the chapter 2.</li>
+                    <li>The second command is to turn the turtle to the left for 90 degrees.</li>
+                </ol>
+            </ol>
+            <!-- add door -->
+            <li>Step 5: Draw the door of your house.</li>
+            <ol type="i">
+                <li>Change your pen color to another color that you like.</li>
+                <li>Turn your turtle to the right for 90 degrees.</li>
+                <li>Move your turtle forward by the length of the edge that you have set up in step 1.</li>
+                <li>Turn your turtle to the left for 90 degrees.</li>
+                <li>The door size: door_size = (the length you have st up in step 1)/3</li>
+                <li>Calculate the distance that the turtle need to move: position = (the length you have set up in step 1)/2 - (door_size/2)</li>
+                <li>Calculate the height: height = (the length you have set up in step 1)/2</li>
+                <li>Move your turtle forward by the length of the edge that you have set up in step 1.</li>
+                <li>Change your pen color to another color that you like.</li>
+                <li>Turn your turtle to the left for 90 degrees.</li>
+                <li>Move your turtle forward by the length of the edge that you have set up in step 1.</li>
+                <li>Turn your turtle to the right for 90 degrees.</li>
+                <li>Move your turtle forward by the length of the door_size</li>
+                <li>Turn your turtle to the right for 90 degrees.</li>
+                <li>Move your turtle forward by the length of height.</li>
+            </ol>
+        </ol>
+        <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW
+                PLEASE DRAW THE HOUSE BY YOURSELF !</strong></div>
+        <!-- interactive begin -->
+        <div class="interactive-part">
+            <button id="run1" class = "interactive-button">Run</button>
+                <button type="button" class = "interactive-button" onclick="openSolution(1)">Solution</button>         
+                <div id="solution1" >
+                    # This solution will draw out a pink house with length of 70.
+                    
+                    <br>sol = turtle.Turtle()
+                    <br>sol.shape("turtle")
+                    <br>sol.color("pink")
+                    <br>length = 70
+                    <br>for i in range(4):
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.left(90)
+                    <br>sol.left(90)
+                    <br>sol.forward(length)
+                    <br>sol.right(90)
+                    <br>sol.color("red")
+                    <br>for i in range(3):
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.left(90)
+                    <br>sol.color("pink")
+                    <br>sol.right(90)
+                    <br>sol.forward(length)
+                    <br>sol.left(90)
+                    <br>door_size = length/3
+                    <br>position = (length/2)-(door_size/2)
+                    <br>height = length/2
+                    <br>sol.forward(position)
+                    <br>sol.color("green")
+                    <br>sol.left(90)
+                    <br>sol.forward(height)
+                    <br>sol.right(90)
+                    <br>sol.forward(door_size)
+                    <br>sol.right(90)
+                    <br>sol.forward(height)
+                    <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution(1)">Close</button>
+                </div>
+            <div class="brython">
+                <pre id="source1" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div1'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+            </pre>
+                <div id="turtle-div1">
+                </div>
+                <br>
+            </div>
+        </div>
+        <!-- interactive end -->
+    </article>
+    <div class="progress-div">
+        <button id="complete2" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+        <input type="password" id = "pass-complete2" style= "visibility:hidden;">
+        <br>
+        <button id ="btn-pass-complete2" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+      </div>
+    </div>
+    <a href="./getfamiliar.html" class="previous prev-next">&laquo; Previous</a>
+    <progress id = "bar" max= 100 value=0></progress>
+    <a href="./whileloop.html" class="next prev-next">Next &raquo;</a>
+    <div id="congratulation" onclick="off()">
+        <h2 id="congrats-text">Congratulations! you finish</h2>
+      </div>
+
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html>

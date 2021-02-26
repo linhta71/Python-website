@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Let's go to the while loop.</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+        import sys
+        import traceback
+        from browser import document, timer, html
+        from turtle import restart
+
+        def run_code(ev):
+            document["turtle-div"].text = ""
+            restart()
+            timer.set_timeout(exec_code, 1)
+        
+        document["run"].bind("click", run_code)
+        def print(arg):
+            document["turtle-div"] <= html.P(arg)
+
+        
+        def exec_code():
+            _code= document["source"].text
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+
+        ###### THIS IS FOR INTERACTIVE 2#####
+        def run_code1(ev):
+            restart()
+            timer.set_timeout(exec_code1, 1)
+
+        document["run1"].bind("click", run_code1)
+        def exec_code1():
+            _code = document["source1"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+    </script>
+</head>
+
+<body onload="brython(1)">
+    <header>
+        <div id="mySidenav" class="sidenav">
+            <ol type="I">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+                <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+                <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+                <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a>
+                </li>
+                <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while
+                            loop.</span></a></li>
+                <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a></li>
+                <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+                <li><a href="./review.html">Review section.</a></li>
+                <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+            </ol>
+        </div>
+        <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+
+        <div id="trial">
+            <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png'
+                    alt='Image drawn with Turtle.'></a>
+            <h1>Python Turtle Graphics</h1>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+                    v</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <ol>
+                        <!--add more links-->
+                        <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+                        <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+                        <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar withturtle.</a></li>
+                        <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for loop.</span></a></li>
+                        <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span style="color:red;">while loop.</span></a></li>
+                        <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span> conditional statement.</a></li>
+                        <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+                        <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+                        <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+                    </ol>
+                </div>
+            </div>
+            <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+        </div>
+    </header>
+    <article>
+        <h1 style="text-align:center;" id="setting">5. Let's go to the while loop.</h1>
+        <p style="color: rgb(255, 0, 0)"><i>This level 4 will teach you how to write a “while loop”, print out
+            statements and will provide you additional practices with using a while loop. There are 2 parts in this level.
+            : </p>
+        <ol type="A">
+            <li style="color: rgb(255, 0, 0)">Part 1: contains the definition, example and a simple task to practice constructing a while loop. </li>
+            <li style="color: rgb(255, 0, 0)">Part 2: advanced practice constructing the while loop by drawing a worm.</li>
+        </ol></i>
+        <p>First, let's take a look at how while loop work</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jSs58VZVLw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ol type="1">
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Get started with the "while loop":</h3>
+                <img style="width: 80%" id="center" src="whilerule.png" alt="while loop rules">
+                <ul>
+                    <li>Purpose of the while loop: The while loop is initiated with the keyword while, followed by a
+                        looping condition. The instructions in the loop block are repeated as long as the condition is
+                        fulfilled. The program then continues on with the next statement listed after the loop block.
+                    </li>
+                    <li>Print statement: simply print out what is in the command. </li>
+                </ul>
+                <br>
+                <table style="width: 80%">
+                    <tr>
+                        <th style="color: rgb(62, 119, 119)">While loop</th>
+                        <th style="color: rgb(62, 119, 119)">Printing statement</th>
+                    </tr>
+                    <tr>
+                        <td>n = a
+                            <br>
+                            <p>while n < c:</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;code chunk</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;n = n + b</p>
+                            <p style="color:rgb(240, 130, 130); font-size: 14px;"><em> In this chapter, "a" will always
+                                    be 0 and "b" will be 1.</em></p>
+                        </td>
+                        <td>
+                            print("statement")
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Important information for using a "while loop":</h3>
+                <ul>
+                    <li>The picture 2 is the pseudocode (a general guide to code a while loop) and explanation for the
+                        picture 1. ‘A’ in the picture 2 is the ‘test expression’ in picture 1, ‘B’ in picture 2 is equal
+                        to “statements” in picture 1. In both pictures, they are trying to say that in a while loop
+                        whenever the “test expression” is TRUE, then the while loop will process to the statements, and
+                        if the “test expression” is FALSE, then the loop will automatically be ended. In other words,
+                        you will automatically be exited from the while loop. </li>
+                    <li>Explanation in the general while loop: </li>
+                    <ul>
+                        <li>“n = a”: ”a” should be an integer. This line of code is used for assigning purpose, here, we
+                            assign “n” with “a”. </li>
+                        <li>“c” : an integer that is larger than “n”. Since “n” is equal to “a” , therefore, “c” is
+                            larger than “a”.</li>
+                        <ul>
+                            <li style="color:rgb(240, 130, 130); font-size: 14px;">Important to know: “c” will always be
+                                larger than “n” (this is the condition), therefore, once “c” is smaller than “n”, the
+                                while loop will automatically be exited and return the result(s). </li>
+                        </ul>
+                        <li>“b” : can be any integer numbers. </li>
+                        <li>Code chunk: This is a chunk of code; you will replace the words “code chunk” by the
+                            command(s) that you want to be repeated when the conditions are satisfied. </li>
+                        <ul>
+                            <li style="color:rgb(240, 130, 130); font-size: 14px;">Important: the condition here is “n”
+                                < “c”. </li> </ul> <li>In only this chapter, the while loop has “n = n + b”. This line
+                                    of code indicates that in a while loop you will need to keep track of your “n”.
+                                    Different purposes of different programs will have different ways to construct the
+                                    while loop. : </li>
+                            <ul>
+                                <li tyle="color:rgb(240, 130, 130); font-size: 14px;">The while loop is different from
+                                    the for loop. It will not automatically stop if “n” always satisfies the conditions.
+                                    Therefore, we must keep track of “n” and at a point, “n” will be larger than “c” and
+                                    that is when the condition(s) will be unsatisfied, and the while loop will
+                                    immediately be exited.</li>
+                            </ul>
+                        </ul>
+                    </ul>
+            </li>
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Using printing statement: </h3>
+                <ul>
+                    <li>“print(“statement”)”: this function will print out everything in the “statement”.</li>
+                    <li style="color: rgb(241, 156, 76)">Example:</li>
+                    <table style="width: 33%; ">
+                        <tr>
+                            <th style="color: rgb(62, 119, 119)">Printing statement: </th>
+                            <th style="color: rgb(62, 119, 119)">Output: </th>
+                        </tr>
+                        <tr>
+                            <td>print("Hello, world !")</td>
+                            <td>Hello, world !</td>
+                        </tr>
+                    </table>
+                </ul>
+            </li>
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Example combines both “while loop” and printing command: Print out
+                    the word “hello” for 4 times </h3>
+                <table style="width: 33%;">
+                    <tr>
+                        <th style="color: rgb(62, 119, 119)">The while loop is</th>
+                        <th style="color: rgb(62, 119, 119)">Out put</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            n = 0
+                            <br>
+                            while n < 4: <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print("hello")
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;n = n + 1
+                        </td>
+                        <td>
+                            hello
+                            <br>
+                            hello
+                            <br>
+                            hello
+                            <br>
+                            hello
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p style="color: rgb(241, 156, 76)">Explanation for example above: </p>
+                <ul>
+                    <li>“n” started at 0 as “n = 0”, since 0 < 4, therefore, the while loop will give out 1 output,
+                            which is the word “hello”. Then “n” will be added 1 through the line of code “n=n +1”, so
+                            now “n” is equal to 1. </li> <li>After the first run, “n=1” and 1 < 4 , therefore, the while
+                                loop will give out another “hello” output. ”. Then “n will be added 1 through the line
+                                of code “n=n +1”, so now “n” is equal to 2. </li> <li>After the second run, “n=2” and 2
+                                < 4 , therefore, the while loop will give out another “hello” output. ”. Then “n” will
+                                    be added 1 through the line of code “n=n +1”, so now “n” is equal to 3. </li> <li>
+                    </li>After the third run, “n=3” and 3 < 4 , therefore, the while loop will give out another “hello”
+                        output. ”. Then “n” will be added 1 through the line of code “n=n +1”, so now “n” is equal to 4.
+                        </li> <li>o After the fourth run, “n=4” and 4=4, which no longer satisfy the condition “n < 4” ,
+                            therefore, the while loop will automatically be exited. It then returns all the 4 “hello”
+                            outputs. </li> </ul> </li> <li>
+                            <h3 style="color: rgb(62, 119, 119)">Exercise task: Practice using “while loop” and printing
+                                command. </h3>
+                            <table style="width: 50%">
+                                <td style="color:rgb(6, 135, 255)">Tasks: Please print out number from 0 to 9. Your
+                                    expected output should look like this:
+                                    <br>0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </td>
+                                <td>
+                                    <p style="color:rgb(241, 156, 76)">Hints:</p>
+                                    <ul>
+                                        <li>In this exercise, what you have to print out is the "n"</li>
+                                        <li>In order to print "n", Instead of using "print("statement"), please use
+                                            "print(n)".</li>
+                                    </ul>
+                                </td>
+                            </table>
+                            <br>
+                            <p style="color:rgb(241, 156, 76)">Instructions:</p>
+                            <ul>
+                                <li>"a" must be 0.</li>
+                                <li>In the first line of the while loop, notice that you will have to print out number
+                                    from 0 to 9, so there are 10 number (including both 0 and 9), so the while loop will
+                                    have to run for 10 times. Based on the hint that you should print out “n” in the box
+                                    above, you should now know what the “c” in the general while loop is.</li>
+                                <li>Now, in the while loop, you should write out the print statement and increase n by a
+                                    suitable number in order to print out the correct value at each time the loop runs.
+                                </li>
+                            </ul>
+            </li>
+            <p style = "color: rgb(241, 156, 76); text-align: center; padding-bottom: 15px; font-size:25px;"> You can write your while loop below. </p>
+            
+            <!-- Interactive 1 begin -->
+            <div class="interactive-part">
+                <button id="run" class = "interactive-button">Run</button>
+                <button type="button" class = "interactive-button" onclick="openSolution()">Solution</button>         
+                <div id="solution">
+                    # This solution will print out numbers from 0 to 9. Each number will lie on each line.
+                    <br>n = 0 
+                    <br>while n < 10:
+                    <br>&emsp;print(n)
+                    <br>&emsp;n = n + 1
+                    <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution()">Close</button>
+                </div>
+        
+                <br>
+                <div class="brython">
+                    <pre id="source"contenteditable="true">
+# run the example first
+n = 0 
+while n < 4:
+    print("Hello")
+    n += 1
+
+# write your code below:
+                </pre>
+                    <div id="turtle-div">
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <!-- Interactive 1 end -->
+            <div class="progress-div">
+                <button id="complete" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+                <input type="password" id = "pass-complete" style= "visibility:hidden;">
+                <br>
+                <button id ="btn-pass-complete" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+              </div>
+            </div>
+            
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Exercise: Draw a pencil: </h3>
+                <img src="pencil.png" alt="This is the expected pencil" id="center" style="width: 60%">
+                <table id="notice">
+                    <td>
+                        Notice <br>
+                        <ul>
+                            <li>In this program, you will have have to write 2 while loops and 2 for loops:</li>
+                            <ul>
+                                <li>2 while loops:</li>
+                                <ul>
+                                    <li>Draw the triangle.</li>
+                                    <li>Draw the square.</li>
+                                </ul>
+                                <li>2 for loops:</li>
+                                <ul>
+                                    <li>Draw the rectangle.</li>
+                                    <li>Draw the pentagon.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </td>
+                </table>
+                <br>
+                <p><strong><span style = "color:rgb(240, 130, 130); font-size: 20px">Reminder:</span></strong> Through the first few chapters, you should have acknowledged the turtle’s default
+                    direction, for loop, while loopand some common commands. Here are what you have learnt</p>
+                <br>
+                <table style="width:80%">
+                    <tr>
+                        <th style="color: rgb(62, 119, 119)">Purpose</th>
+                        <th style="color: rgb(62, 119, 119)">Command</th>
+                    </tr>
+                    <tr>
+                        <td>Import Python turtle graphic.</td>
+                        <td>import turtle</td>
+                    </tr>
+                    <tr>
+                        <td>Create a name for your turtle.</td>
+                        <td>name = turtle.Turtle()</td>
+                    </tr>
+                    <tr>
+                        <td>Choosing a shape.
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                                shape for your turtle then your turtle shape will automatically be an arrow.</em>
+                        </td>
+                        <td>name.shape(‘shape’)
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘shape’ by one of
+                                these shapes: arrow, circle, square, triangle or turtle. </em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Choosing a color
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                                color for your turtle then your turtle color will automatically be black.</em>
+                        </td>
+                        <td>name.color(‘color’)
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘color’ by the
+                                color that you wish to. </em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Setting a default location to (0,0)</td>
+                        <td>name.goto(0,0)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Setting a
+                                background</strong>
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px; text-align: center;">If you don’t
+                                want to have background image for your turtle, please skip this part.</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Call the screen function.</td>
+                        <td>screen=turtle.Screen().</td>
+                    </tr>
+                    <tr>
+                        <td>Set background to the picture that you like.</td>
+                        <td>screen.bgpic(“picture_file”)
+                            <br>
+                            <em style="color: rgb(240, 130, 130); font-size: 14px">Click to the image icon and look at 3
+                                images that it contains. Replace ‘picture_file’ with the image file that you like.</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Movement
+                                commands</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Make the turtle goes forward in the current direction.</td>
+                        <td>turtle.forward(steps)</td>
+                    </tr>
+                    <tr>
+                        <td>Turns the turtle to the left direction in number degrees.</td>
+                        <td>turtle.left(degrees)</td>
+                    </tr>
+                    <tr>
+                        <td>Turns the turtle to the right direction in number degrees.</td>
+                        <td>turtle.right(degrees)</td>
+                    </tr>
+                    <tr>
+                        <td>Pointing a variable to an object.</td>
+                        <td>variable = object
+                            <br>
+                            <em style="color:rgb(240, 130, 130); font-size: 14px;">The object can be in any type:
+                                integer, decimal, list, etc.</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Setting turtle pen to a color</td>
+                        <td>turtle. pencolor('color')
+                            <br>
+                            <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace ‘color’ by a color that you
+                                want. </em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style = "color:rgb(6, 135, 255)">The general while loop is: </span><br> n = a<br>while n < c: <br> &nbsp;&nbsp;&nbsp;&nbsp;code
+                                chunk <br> &nbsp;&nbsp;&nbsp;&nbsp;n = n + b</td>
+                        <td><span style = "color:rgb(6, 135, 255)">The general for loop is: </span><br> for i inrange(i): <br> &nbsp;&nbsp;&nbsp;&nbsp; code chunk
+                        </td>
+                    </tr>
+                </table>
+
+            </li>
+            <li>
+                <h3 style="color: rgb(62, 119, 119)">Instruction to draw the pencil:</h3>
+                <ol type="a">
+                    <li>Set up the default position, name your turtle, set up a background (if you want to) for your
+                        turtle. </li>
+                    <li>Pick a length for all of your edges by using the similar syntax when you did for the square in
+                        the previous chapter. Notice that all the edges in the following shapes: the triangle, the
+                        square and the pentagon are the same, so you just have to pick a length (should be larger 50)
+                        for all of them. The width of the rectangle will be calculated later based on this length. </li>
+                    <li>Write a while loop that draws the green triangle.</li>
+                    <ol type="i">
+                        <li>Before starting to write the while loop you have to turn your turtle to the left for 30
+                            degrees.</li>
+                        <li>Set your turtle pen color to green.</li>
+                        <li>Now you can write your while loop</li>
+                        <ul>
+                            <li>"a" should be 0</li>
+                            <li>As you can see, there are 3 equal edges in the triangle, so the code that draw one edge
+                                must be run for 3 times and the total number of edges in the triangle will be your “c”
+                                in the general for loop. </li>
+                            <li>In the while loop, you will:</li>
+                            <ul>
+                                <li>Draw the line that form one edge of the triangle. You just have to write the command
+                                    that makes the turtle go forward by the length that you have chosen. <span
+                                        style="color:rgb(240, 130, 130)">Notice that there are 2 ways to write this and
+                                        you can use either method. Review the previous chapter if you don’t
+                                        remember.</span></li>
+                                <li>Turn your turtle to the right for 120 degrees. You can look at the table above again
+                                    if you forget how to do this.</li>
+                                <li>Increase the “n” by 1.</li>
+                            </ul>
+                        </ul>
+                    </ol>
+                    <li>Write a while loop that draws the square.</li>
+                    <ol type="i">
+                        <li>Before drawing the square, you will have to move your turtle to a suitable location. You can
+                            follow the steps below:</li>
+                        <ul>
+                            <li>1st step: Make your turtle goes forward by the length you have chosen in part a. </li>
+                            <li>2nd step: Turn your turtle to the right for 30 degrees.</li>
+                            <li>Set your turtle pen color to black. </li>
+                        </ul>
+                        <li>Now you can write your while loop:</li>
+                        <ul>
+                            <li>"a" should be 0</li>
+                            <li>As you can see, there are 4 equal edges in the square, so the code that draw one edge
+                                must be run for 4 times and the total number of edges in the square will be your “c” in
+                                the general for loop. </li>
+                            <li>In the while loop, you will:</li>
+                            <ul>
+                                <li>Draw the line that form one edge of the square. You just have to write the command
+                                    that makes the turtle go forward by the length that you have chosen. <span
+                                        style="color:rgb(240, 130, 130)">Notice that there are 2 ways to write this and
+                                        you can use either method. Review the previous chapter if you don’t remember.
+                                    </span></li>
+                                <li>Turn your turtle to the right for 90 degrees. You can look at the table above again
+                                    if you forget how to do this.</li>
+                                <li>Increase the “n” by 1.</li>
+                            </ul>
+                        </ul>
+                    </ol>
+                    <li>Write the for loop that draws the rectangle:</li>
+                    <ol type="i">
+                        <li>Before writing out the for loop, you need to move your turtle to suitable location. You can
+                            follow the step below:</li>
+                        <ul>
+                            <li>Make you turtle go forward by the length that you have chosen.</li>
+                            <li>Set your turtle pencolor to yellow</li>
+                        </ul>
+                        <li>Now you can write the for loop:</li>
+                        <ul>
+                            <li>'i' in the general 'for loop' is the total number of edges that are equal to each other
+                                in the shape. For example, in the level 2, you have learnt how to draw the square by
+                                using a 'for loop', in a square, you have 4 equal edges, therefore, your 'i' is equal to
+                                4 and the 'for loop' is 'for n in range(4):'. Now look at the rectangle, there are 2
+                                pairs of edges that are equal to each other (2 widths and 2 heights), therefore, the
+                                total number of edges that are equal in each group is 2, so 'i' here must equal to 2.
+                            </li>
+                            <li>In the for loop you will:</li>
+                            <ul>
+                                <li>Draw the width of the rectangle by writing the command that makes the turtle go
+                                    forward by the length you have chosen multiplied by 4.</li>
+                                <li>Turn your turtle to the right for 90 degrees.</li>
+                                <li>Draw the height of the rectangle by writing the command that makes the turtle go
+                                    forward by the length you have chosen.</li>
+                                <li>Turn your turtle to the right for 90 degrees. </li>
+                            </ul>
+                        </ul>
+                    </ol>
+                    <li>Write the for loop that draws the pentagon:</li>
+                    <ol type="i">
+                        <li>Before writing out the for loop, you need to move your turtle to suitable location. You can
+                            follow the step below:</li>
+                        <ul>
+                            <li>1st step: Make your turtle goes forward by chosen length times 4.</li>
+                            <li>2nd step: Turn your turtle to the left for 18 degrees.
+                            <li>
+                            <li>Set your turtle pencolor to red.</li>
+                        </ul>
+                        <li>Now you can write the for loop:</li>
+                        <ul>
+                            <li>Pentagon has 5 equal edges, therefore, your “i” should be 5.</li>
+                            <li>In the for loop you will:</li>
+                            <ul>
+                                <li>Draw the line that form one edge of the pentagon. You just have to write the command
+                                    that makes the turtle go forward by the length that you have chosen.</li>
+                                <li>Turn your turtle to the right for 72 degrees. </li>
+                            </ul>
+                        </ul>
+                    </ol>
+                </ol>
+            </li>
+        </ol>
+        <br>
+        <p style = "color: rgb(241, 156, 76); text-align: center; padding-bottom: 15px; font-size:25px;"> You can wdraw your pencil below. </p>
+        <!-- Interactive 2 begin -->
+        <div class="interactive-part">
+            <button id="run1" class = "interactive-button">Run</button>
+            <button type="button" class = "interactive-button" onclick="openSolution(1)">Solution</button>         
+                <div id="solution1" >
+                    # This solution will draw out a pencil with length of 50.
+                    
+                    <br>sol = turtle.Turtle()
+                    <br>sol.shape("turtle")
+                    <br>sol.color("pink")
+                    <br>length = 50
+                    <br>sol.penup()
+                    <br>sol.goto(-200, 0)
+                    <br>sol.pendown()
+                    <br>sol.pencolor("green")
+                    <br>sol.left(30)
+                    <br>n = 0
+                    <br>while n < 3:
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.right(120)
+                    <br>&emsp;n = n + 1
+                    <br>sol.forward(length)
+                    <br>sol.right(30)
+                    <br>sol.color("black")
+                    <br>n = 0
+                    <br>while n < 4:
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.right(120)
+                    <br>&emsp;n = n + 1
+                    <br>sol.forward(length)
+                    <br>sol.pencolor("yellow")
+                    <br>for i in range(2):
+                    <br>&emsp;sol.forward(length*4)
+                    <br>&emsp;sol.right(90)
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.right(90)
+                    <br>sol.forward(length*4)
+                    <br>sol.left(18)
+                    <br>sol.pencolor("red")
+                    <br>for i in range(5):
+                    <br>&emsp;sol.forward(length)
+                    <br>&emsp;sol.right(72)
+                    <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution(1)">Close</button>
+                </div>
+            <div class="brython">
+                <pre id="source1"contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+    turtle_canvas_wrapper = document['turtle-div1'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+            </pre>
+                <div id="turtle-div1">
+                </div>
+                <br>
+            </div>
+        </div>
+        <!-- Interactive 2 end -->
+        <div class="progress-div">
+            <button id="complete2" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+            <input type="password" id = "pass-complete2" style= "visibility:hidden;">
+            <br>
+            <button id ="btn-pass-complete2" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+          </div>
+        </div>
+        <br>
+        <a href="./forloop.html" class="previous prev-next">&laquo; Previous</a>
+        <progress id = "bar" max= 100 value=0></progress>
+        <a href="./ifelse.html" class="next prev-next">Next &raquo;</a>
+    </article>
+    <div id="congratulation" onclick="off()">
+        <h2 id="congrats-text">Congratulations! you finish</h2>
+      </div>
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+
+</html>

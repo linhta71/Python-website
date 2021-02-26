@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Review section.</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js">
+    </script>
+    <script id="python_script" type="text/python">
+        import sys
+        import traceback
+        from browser import document, timer
+        from turtle import restart
+  
+        """def run_code(ev):
+            restart()
+            timer.set_timeout(exec_code, 1)
+        
+        document["run"].bind("click", run_code)
+        
+        def exec_code():
+            _code = document["source"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+        """
+        
+        ###############Second interactive#####
+        
+        def run_code1(ev):
+            restart()
+            timer.set_timeout(exec_code1, 1)
+
+        document["run1"].bind("click", run_code1)
+        def exec_code1():
+            _code = document["source1"].text
+            #_code = "\n".join([line.strip() for line in _code.split("\n")])
+            try:
+                exec(_code)
+            except:
+                try:
+                    traceback.print_exc()
+                except:
+                    print("could not print traceback")
+    </script>
+  </head>
+  
+  <body onload="brython(1)">
+    <header>
+      <div id="mySidenav" class="sidenav">
+        <ol type="I">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+          <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+          <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+          <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+          <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a>
+          </li>
+          <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a>
+          </li>
+          <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+          <li><a href="./review.html">Review section.</a></li>
+          <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+        </ol>
+      </div>
+      <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+  
+      <div id="trial">
+        <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>
+        <h1>Python Turtle Graphics</h1>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about:
+            v</button>
+          <div id="myDropdown" class="dropdown-content">
+            <ol>
+              <!--add more links-->
+              <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+              <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+              <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)">Let's get familiar with turtle.</a></li>
+              <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for
+                    loop.</span></a></li>
+              <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span
+                    style="color:red;">while loop.</span></a></li>
+              <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span>
+                  conditional statement.</a></li>
+              <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+              <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+              <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+            </ol>
+          </div>
+        </div>
+        <a href='./index2.html'><button id='homebutton' class="btn"><i class="fa fa-home"> Home</i></button></a>
+      </div>
+    </header>
+
+
+  <article>
+    <h1 style="text-align:center;" id="setting">8. Review.</h1>
+    <p style="color:rgb(245, 124, 79);text-align:center;"><b>You will have to complete 1 task in this chapter.</p></b>
+    <p><span style="color:rgb(255, 25, 0)"><i>This chapter will review all the materials that have been provided.</span> </i>
+    <br>
+    </p>
+    <p><span style = "color: rgb(240, 148, 114);">Reminder</span>: Through the first few chapters, you should have acknowledged the turtle’s default direction and some common commands. Here are some of the commands and techniques that you have learnt.</p>
+    <table style="width:80%">
+        <tr>
+            <th style="color: rgb(62, 119, 119)">Purpose</th>
+            <th style="color: rgb(62, 119, 119)">Command</th>
+        </tr>
+        <tr>
+            <td>Import Python turtle graphic.</td>
+            <td>import turtle</td>
+        </tr>
+        <tr>
+            <td>Create a name for your turtle.</td>
+            <td>name = turtle.Turtle()</td>
+        </tr>
+        <tr>
+            <td>Choosing a shape.
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                    shape for your turtle then your turtle shape will automatically be an arrow.</em>
+            </td>
+            <td>name.shape(‘shape’)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘shape’ by one of
+                    these shapes: arrow, circle, square, triangle or turtle. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Choosing a color
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px;">if you skip the command choosing a
+                    color for your turtle then your turtle color will automatically be black.</em>
+            </td>
+            <td>name.color(‘color’)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">You have to replace ‘color’ by the
+                    color that you wish to. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Setting a default location to (0,0)</td>
+            <td>name.goto(0,0)</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Setting a
+                    background</strong>
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px; text-align: center;">If you don’t
+                    want to have background image for your turtle, please skip this part.</em>
+            </td>
+        </tr>
+        <tr>
+            <td>Call the screen function.</td>
+            <td>screen=turtle.Screen().</td>
+        </tr>
+        <tr>
+            <td>Set background to the picture that you like.</td>
+            <td>screen.bgpic(“picture_file”)
+                <br>
+                <em style="color: rgb(240, 130, 130); font-size: 14px">Click to the image icon and look at 3
+                    images that it contains. Replace ‘picture_file’ with the image file that you like.</em>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; color:rgb(62, 119, 119)"><strong>Movement
+                    commands</strong></td>
+        </tr>
+        <tr>
+            <td>Make the turtle goes forward in the current direction.</td>
+            <td>turtle.forward(steps)</td>
+        </tr>
+        <tr>
+            <td>Turns the turtle to the left direction in number degrees.</td>
+            <td>turtle.left(degrees)</td>
+        </tr>
+        <tr>
+            <td>Turns the turtle to the right direction in number degrees.</td>
+            <td>turtle.right(degrees)</td>
+        </tr>
+        <tr>
+            <td>Pointing a variable to an object.</td>
+            <td>variable = object
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">The object can be in any type:
+                    integer, decimal, list, etc.</em>
+            </td>
+        </tr>
+        <tr>
+            <td>Setting turtle pen to a color</td>
+            <td>turtle. pencolor('color')
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace ‘color’ by a color that you
+                    want. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Make the turtle goes backward in the current direction</td>
+            <td>turtle.backward(steps)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace “steps” by an integer.  </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Draw a semi circle </td>
+            <td>turtle.circle(radius, 180)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace radius by either a decimal or an integer. 180 is fixed for SEMI-CIRCLE only. </em>
+            </td>
+        </tr>
+        <tr>
+            <td>Draw a circle </td>
+            <td>turtle.circle(radius)
+                <br>
+                <em style="color:rgb(240, 130, 130); font-size: 14px;">Replace radius by either a decimal or an integer.</em>
+            </td>
+        </tr>
+        <tr>
+            <td><span style = "color:rgb(6, 135, 255)">The general while loop is: </span><br> n = a<br>while n < c: <br> &nbsp;&nbsp;&nbsp;&nbsp;code
+                    chunk <br> &nbsp;&nbsp;&nbsp;&nbsp;n = n + b</td>
+            <td><span style = "color:rgb(6, 135, 255)">The general for loop is: </span><br> for i inrange(i): <br> &nbsp;&nbsp;&nbsp;&nbsp; code chunk
+            </td>
+        </tr>
+    </table>
+    <h3 style="color:rgb(88, 146, 146); font-size: 25px">Task: Draw a shape that looks exactly like the image below. The color of each shape depends on you.</h3>
+    <img id="center" src="reviewsnake.png" alt="snake drawn by a turtle">
+    <table id="general">
+        <tr>
+            You  will need to write:
+            <ol>
+                <li>2 while loops to draw the pentagon and the hexagon.</li>
+                <li>2 for loop to draw the square and the triangle.</li>
+            </ol>
+        </tr>
+    </table>
+
+    <h3 style="color:rgb(88, 146, 146)">Instructions:</h3>
+    <ul>
+        <!-- Step 1 -->
+        <li>
+            <h4>Step 1: set up your turtle:</h4>
+            <ol>
+                <li>Name your turtle.</li>
+                <li>Pen up your turtle.</li>
+                <li>Set the location of your turtle to -200 and 0.</li>
+                <li>Pen down your turtle.</li>
+                <li>Pick a length for all of your edges by using 
+                    the similar syntax when you did for the square in 
+                    the chapter 3. Notice that all the edges in the 
+                    following shapes: the triangle, the pentagon, the 
+                    hexagon and the square are the same. <br>
+                    <b><u>Please take the length of 50.</u></b>
+                </li>
+            </ol>
+        </li>
+        <!-- Step 2 -->
+        <li>
+            <h4>Step 2: draw triangle head</h4>
+            <ol>
+                <li>Set your turtle pen color to green</li>
+                <li>Move your turtle to the left for 30 degrees.</li>
+                <li>
+                    Write the for loop to draw the triangle:
+                    <ul>
+                        <li>There are 3 edges in the triangle, therefore, “i” here should be 3</li>
+                        <li>
+                            The code chunk should contain 2 lines of code
+                            <ul>
+                                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                                <li>Turn your turtle to the right for 120 degrees.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <!-- Step 3 -->
+        <li>
+            <h4>Step 3: Draw the neck of the snake (the black square):</h4>
+            <ol>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Turn your turtle to the right for 30 degrees</li>
+                <li>Change your turtle pen color to black.</li>
+                <li>
+                    Write the for loop to draw the square:
+                    <ol>
+                        <li>There are 4 edges in the square, therefore, “i” here should be 4.</li>
+                        <li>The code chunk should contain 2 lines of code.
+                            <ul>
+                                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                                <li>Turn your turtle to the right for 90 degrees.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <!-- Step 4 -->
+        <li>
+            <h4>Step 4: Draw the first hexagon along with triangle features:</h4>
+            <ol>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Change your turtle pen color to red.</li>
+                <li>Turn your turtle to the left for 90 degrees.</li>
+                <li>
+                    Use while loop to draw hexagon:
+                    <ul>
+                        <li>“a” should start at 0.</li>
+                        <li>“c” should be 6 since there are 6 edges in the hexagon. </li>
+                        <li>
+                            There should be 3 lines of code below the while command:
+                            <ul>
+                                <li>Turn your turtle to the right for 60 degrees.</li>
+                                <li>Make your turtle goes forward by the length you have set up in step 1</li>
+                                <li>Increase “n” by 1, which means “b” = 1.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Change your turtle pen color to yellow.</li>
+                <li>Turn your turtle to the right for 120 degrees.</li>
+                <li>Repeat the for loop that draw the triangle in step 2.</li>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Turn your turtle to the left for 60 degrees.</li>
+                <li>Repeat the for loop that draw the triangle in step 2.</li>
+            </ol>
+        </li>
+        <!-- Step 5 -->
+        <li>
+            <h4>Step 5: Draw the second hexagon along with triangle features:</h4>
+            <ol>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Change your turtle pen color to red.</li>
+                <li>Turn your turtle to the left for 60 degrees.</li>
+                <li>Repeat the while loop that draws the hexagon in step 4.</li>
+                <li>Change your turtle pen color to yellow.</li>
+                <li>Turn your turtle to the right for 120 degrees.</li>
+                <li>Repeat the for loop that draw the triangle in step 2</li>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Turn your turtle to the left for 60 degrees.</li>
+                <li>Repeat the for loop that draw the triangle in step 2.</li>
+            </ol>
+        </li>
+        <!-- Step 6 -->
+        <li>
+            <h4>Step 6: Draw the tail of the snake (which is the orange pentagon):</h4>
+            <ol>
+                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                <li>Turn your turtle to the right for 12 degrees.</li>
+                <li>Change your turtle pen color to orange.</li>
+                <li>Use while loop to draw the pentagon:
+                    <ul>
+                        <li>“a” should start at 0.</li>
+                        <li>“c” should be 5 since there are 5 edges in the hexagon. </li>
+                        <li>
+                            There should be 3 lines of code below the while command:
+                            <ul>
+                                <li>Make your turtle goes forward by the length you have set up in step 1.</li>
+                                <li>Turn your turtle to the right for 72 degrees.</li>
+                                <li>Increase “n” by 1, which means “b” = 1.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+    </ul>
+
+
+    <div style="color: rgb(88, 146, 146); text-align: center; padding-bottom: 15px; font-size:25px;"><strong> NOW PLEASE COMPLETE THE TASK !</strong></div>
+<div class="interactive-part">
+    <button id="run1" class = "interactive-button">Run</button>
+    <button type="button" class = "interactive-button" onclick="openSolution()">Solution</button>         
+    <div id="solution">
+        # This solution will draw out a snake that look exactly like the provided image.
+        <br> x = 90
+        <br>my_turtle = turtle.Turtle()
+        <br>my_turtle.penup()
+        <br>my_turtle.goto(-300,0)
+        <br>my_turtle.pendown()
+        <br>my_turtle.pensize(5)
+        <br>my_turtle.shape('turtle')
+        <br>my_turtle.color('green')
+        <br>## draw the head
+        <br>my_turtle.pencolor('green')
+        <br>my_turtle.left(30)  
+        <br>for i in range(3):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(120)'
+        <br>
+        <br>## draw the neck
+        <br>my_turtle.forward(x)
+        <br>my_turtle.right(30)
+        <br>my_turtle.pencolor('black')
+        <br>for i in range(4):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(90)
+        <br>
+        <br>## first body
+        <br>my_turtle.forward(x)
+        <br>my_turtle.pencolor('red')
+        <br>my_turtle.left(90)
+        <br>i = 0 
+        <br>while i < 6:
+        <br>&emsp;my_turtle.right(60)
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;i+= 1
+        <br>
+        <br>my_turtle.pencolor('yellow')
+        <br>my_turtle.right(120)
+        <br>for i in range(3):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(120)'
+        <br>my_turtle.forward(x)
+        <br>my_turtle.left(60)
+        <br>for i in range(3):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(120)'
+        <br>
+        <br>## second body
+        <br>my_turtle.forward(x)
+        <br>my_turtle.pencolor('red')
+        <br>my_turtle.left(60)
+        <br>i = 0 
+        <br>while i < 6:
+        <br>&emsp;my_turtle.right(60)
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;i+= 1
+        <br>
+        <br>my_turtle.pencolor('yellow')
+        <br>my_turtle.right(120)
+        <br>for i in range(3):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(120)
+        <br>my_turtle.forward(x)
+        <br>my_turtle.left(60)
+        <br>for i in range(3):
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(120)
+        <br>
+        <br>## tail
+        <br>my_turtle.forward(x)
+        <br>my_turtle.right(12)
+        <br>my_turtle.pencolor('orange')
+        <br>i = 0
+        <br>while  i < 5:
+        <br>&emsp;my_turtle.forward(x)
+        <br>&emsp;my_turtle.right(72)
+        <br>&emsp;i+=1 
+        <br><button type="button" class = "interactive-button close-sol" onclick="closeSolution()">Close</button>
+    </div>
+
+    <br>
+    <div class="brython">
+    <pre id="source1" contenteditable="true">
+from browser import document
+import turtle
+turtle.set_defaults(
+turtle_canvas_wrapper = document['turtle-div1'])
+
+# DO NOT DELETE ABOVE THIS LINE
+######## Write your code below
+
+name = turtle.Turtle()
+name.shape("turtle")
+name.color("red")
+
+# DO NOT DELETE BELOW THIS LINE
+turtle.done() 
+    </pre>
+    <div id="turtle-div1">
+    </div>
+    <br>
+    </div>
+</div>
+    <div class="progress-div">
+        <button id="complete2" class = "complete-btn" style="font-size: 20px;border-radius: 10px; border:  1px solid darkslategrey; padding: 15px 15px;">Complete</button>
+        <input type="password" id = "pass-complete2" style= "visibility:hidden;">
+        <br>
+        <button id ="btn-pass-complete2" class = "pass-btn" style = "visibility: hidden;">Enter pass</button>
+      </div>
+    </div>
+    <br>
+    <a href="./instances.html" class="previous prev-next">&laquo; Previous</a>
+    <progress id = "bar" max= 100 value=0></progress>
+    <a href="./advance.html" class="next prev-next">Next &raquo;</a>
+  </article>
+  <div id="congratulation" onclick="off()">
+    <h2 id="congrats-text">Congratulations! you finish</h2>
+  </div>
+</body>
+<script src="app.js"></script>
+<script src="progress.js"></script>
+</html> 

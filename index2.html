@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Turtle Graphics</title>
+    <link href='./style3.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <div id="mySidenav" class="sidenav">
+      <ol type="I">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <li><a href="./intro.html">Introduction to Python Turtle Graphics.</a></li>
+        <li><a href="./settingturtle.html">Setting up your turtle.</a></li>
+        <li><a href="./getfamiliar.html">Let's get familiar with turtle.</a></li>
+        <li><a href="./forloop.html">Now is the <span style="color: rgb(156, 250, 252)">for loop.</span></a></li>
+        <li><a href="./whileloop.html">Let's go to the <span style="color: rgb(156, 250, 252)">while loop.</span></a></li>
+        <li><a href="./ifelse.html"><span style="color: rgb(156, 250, 252)">If-else </span>conditional statement.</a></li>
+        <li><a href="./instances.html">Multiple turtles at once.</span></a></li>
+        <li><a href="./review.html">Review section.</a></li>
+        <li><a href="./advance.html">Advanced knowlegde about turtle.</a></li>
+      </ol>
+    </div>
+    <div><button id="bars" class="trial fa fa-bars" style="color: darkslategray" onclick="openNav()"></button></div>
+    <div id="trial">
+        <a href="https://en.wikipedia.org/wiki/Turtle_graphics"><img src='turtle2.png' alt='Image drawn with Turtle.'></a>  
+        <h1>Python Turtle Graphics</h1>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" style="color: darkslategray">This is the chapter about: v</button>
+            <div id="myDropdown" class="dropdown-content">
+              <ol>
+    <!--add more links-->
+                <li><a href="./intro.html" style="color: rgb(90, 105, 121)">Introduction to Python Turtle Graphics.</a></li>
+                <li><a href="./settingturtle.html" style="color: rgb(90, 105, 121)"> Setting up your turtle.</a></li>
+                <li><a href="./getfamiliar.html" style="color: rgb(90, 105, 121)" >Let's get familiar with turtle.</a></li>
+                <li><a href="./forloop.html" style="color: rgb(90, 105, 121)">Now is the <span style="color:red;">for loop.</span></a></li>
+                <li><a href='./whileloop.html' style="color: rgb(90, 105, 121)">Let's go to the <span style="color:red;">while loop.</span></a></li>
+                <li><a href='./ifelse.html' style="color: rgb(90, 105, 121)"><span style="color:red;">If-else</span> conditional statement.</a></li>
+                <li><a href='./instances.html' style="color: rgb(90, 105, 121)">Multiple turtles at once.</a></li>
+                <li><a href='./review.html' style="color: rgb(90, 105, 121)">Review section.</a></li>
+                <li><a href='./advance.html' style="color: rgb(90, 105, 121)">Advanced knowledge about turtle.</a></li>
+              </ol>
+            </div>
+        </div>
+        <a href='./index2.html'><button id='homebutton' class="btn"><i class = "fa fa-home"> Home</i></button></a>
+    </div>
+  </header>
+  <div class="welcome">
+    <h2>Welcome To Python Turtle Graphics !</h2>
+  <!--first row-->
+    <div class="dashboard">
+  <!-- add link to # for setting turtle -->
+      <div id="chapter0" class="chapter">
+        <a href="./intro.html">
+          <img id="0stpic" src="chap0.jpg" alt="Python turtle.">
+          <br> 
+          <div style="color: rgb(90, 105, 121)">1. Introduction to Turtle.</div>
+        </a>
+      </div>
+      <div id="chapter1" class="chapter">
+        <a href="./settingturtle.html">
+          <img id="1stpic" src="first.png" alt="An image drawn with Turtle.">
+          <br> 
+          <div style="color: rgb(90, 105, 121)">1. Setting up your turtle.</div>
+        </a>
+      </div>
+  <!-- add link to # for getting familiar with turtle -->
+      <div id="chapter2" class="chapter">
+        <a href="./getfamiliar.html">
+          <img id="2ndpic" src="second.png" alt="A tree drawn by Turtle">
+          <br>
+          <div style="color: rgb(90, 105, 121)">2. Let's get familiar with turtle.</div>
+        </a>
+      </div>
+  <!-- add link to # for loop -->
+      <div id="chapter3" class="chapter">
+        <a href="./forloop.html">
+          <img id="3rdpic" src="third.jpg" alt="Python Turtle Graphics">
+          <br>
+          <div style="color: rgb(90, 105, 121)">3. Now is the <span style="color:red;">for loop.</span></div>
+        </a>
+      </div>
+
+  <!--add link to # for the for loop website -->
+      <div id="chapter4" class='chapter'>
+        <a href="./whileloop.html">
+          <img id="4thpic" src="while.jpg" alt="Infinity symbol.">
+          <br> 
+          <div style="color: rgb(90, 105, 121)">4. Let's go to the <span style="color:red;">while loop.</span></div>
+        </a>
+      </div>
+  <!-- add link to # for getting familiar with turtle -->
+      <div id="chapter5" class="chapter">
+        <a href="./ifelse.html">
+          <img id="5thpic" src="ifelse.png" alt="An if-else situation.">
+          <br>
+          <div style="color: rgb(90, 105, 121)">5. <span style="color:red;">If-else</span> conditional statement.</div>
+        </a>
+      </div>
+  <!-- add link to # for getting familiar with turtle -->
+      <div id="chapter6" class="chapter">
+        <a href="./instances.html">
+          <img id="6thpic" src="mulltiple.jpg" alt="Multiple turtles.">
+          <br>
+          <div style="color: rgb(90, 105, 121)">6. Multiple turtles at once.</span></div>
+        </a>
+      </div>
+  <!-- add link to # for review section-->
+      <div id="chapter7" class="chapter">
+        <a href="./review.html">
+          <img id="7thpic" src="review.png" alt="Review photo.">
+          <br>
+          <div style="color: rgb(90, 105, 121)">7. Review section.</span></div>
+        </a>
+      </div>
+  <!-- add link to # for getting familiar with turtle -->
+      <div id="chapter8" class="chapter">
+        <a href="./advance.html">
+          <img id="8thpic" src="fourth.jpg" alt="Nature photo.">
+          <br>
+          <div style="color: rgb(90, 105, 121)">8. Advanced knowledge about turtle.</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="app.js"></script>
+</html>
